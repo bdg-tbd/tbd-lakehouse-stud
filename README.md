@@ -128,6 +128,7 @@ the credits used so far.
 - [ ] `mise run test` shows 7 × PASS.
 - [ ] Exercise (step 9) uploaded: the lineage report and the masking notebook, both as PDF.
 - [ ] Everything destroyed (step 10) and `mise run verify-destroyed` says *All clean*.
+- [ ] floci part (step 11) uploaded: `<team_id>-floci.pdf`.
 
 ## 9. Exercise (before you destroy)
 
@@ -223,6 +224,60 @@ GCP keeps deleted projects for 30 days, and **their IDs can't be reused until th
 rebuild after destroying, use a new `TF_VAR_team_id`, and rerun the SQL from `mise run sf:keygen`
 (step 5): destroy also drops `WH_QUERY`, the warehouse Terraform logs in with. The Snowflake trial
 expires on its own.
+
+## 11. Local cloud emulator (floci)
+
+Real clouds cost money, and each `apply` takes minutes. A **cloud emulator** runs a fake cloud on
+your laptop. It answers the same APIs, so the same Terraform code runs against it for free, in
+seconds. [floci](https://github.com/floci-io/floci) emulates AWS. Try it with one bucket.
+
+1. Create `floci/compose.yml` and start floci:
+
+   ```yaml
+   services:
+     floci:
+       image: floci/floci:2.4.0
+       ports: ["4566:4566"]
+       volumes:
+         - /var/run/docker.sock:/var/run/docker.sock   # floci runs its web console in a container
+       environment:
+         FLOCI_RUN_AS_ROOT: "true"                     # Linux: lets floci use the Docker socket
+   ```
+
+   ```bash
+   cd floci
+   docker compose up -d
+   export AWS_ENDPOINT_URL=http://localhost.floci.io:4566 AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test AWS_REGION=eu-central-1
+   ```
+
+   `AWS_ENDPOINT_URL` sends every AWS call to floci. `*.localhost.floci.io` resolves to
+   `127.0.0.1`. Without this variable, the same code would deploy to real AWS.
+
+2. Write `floci/main.tf` with the `hashicorp/aws` provider (`~> 6.0`, region `eu-central-1`, no
+   endpoint or keys in the code) and one `aws_s3_bucket` named `tbd-<semester>-<team_id>-floci`.
+   Then:
+
+   ```bash
+   mise exec -- terraform init
+   mise exec -- terraform apply
+   ```
+
+3. Open <http://localhost:4566/_floci/ui>. The first visit starts the console, which takes about
+   30 s. Go to **Storage** and find your bucket.
+
+4. Clean up:
+
+   ```bash
+   mise exec -- terraform destroy
+   docker rm -f floci-aws-ui      # the console container floci started
+   docker compose down
+   ```
+
+Upload `<team_id>-floci.pdf` with:
+
+1. a screenshot of the floci console showing your bucket;
+2. a short answer: how could an emulator like this help in this project (cost, development time,
+   CI), and what can't it replace? What would you still have to test on the real cloud?
 
 ## Costs and guardrails
 
