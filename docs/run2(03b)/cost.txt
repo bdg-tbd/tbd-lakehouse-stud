@@ -1,0 +1,15 @@
+/repos/tbd-lakehouse-stud/.venv/lib/python3.12/site-packages/snowflake/connector/connection/_connection.py:135: FutureWarning: enable_server_session_keep_alive_auto_detection was not set and defaults to True. In a future version, the default will change to None. Please provide an explicit value: True = check for running async queries before logout (queries are preserved); False/None = always send logout on close (async queries may be terminated by server). Logout behavior can also be overridden with server_session_keep_alive. See the connection parameter docs for more info.
+  options = self.config.to_proto_options(
+Snowflake credits used (last 31 days): 2.86 of 12 credits (24%, ~$11.16 at $3.90/credit)
+  warehouses: 2.84   serverless: 0.02
+    WAREHOUSE_METERING           2.838
+    SERVERLESS_TASK              0.010
+    EXTERNAL_GOVERNANCE          0.009
+    COPY_FILES                   0.002
+    TABLE_OPTIMIZATION           0.002
+    OPEN_CATALOG                 0.000
+    SNOWPIPE_STREAMING           0.000
+    PIPE                         0.000
+    TELEMETRY_DATA_INGEST        0.000
+    AUTO_CLUSTERING              0.000
+Note: ACCOUNT_USAGE lags by up to ~3 h, so the latest usage may not show yet.

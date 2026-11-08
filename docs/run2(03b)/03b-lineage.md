@@ -29,7 +29,8 @@ examples, both started by `mise run gen:batch`:
 **SF** = Snowflake reads all of them; **SP** = Spark reads all of them through Horizon's Iceberg REST
 catalog, which plans the scan server-side and applies masking and row access per user; **DD** =
 DuckDB cannot do server-side planning, so Horizon refuses it every table with a policy and it reads only
-the PII-free gold tables. The lab checks passed on `03b` (parity 3/3, masking 5/5, tag propagation 3/3).
+the PII-free gold tables. The lab checks passed on `03b` (parity 3/3, masking 5/5, tag propagation 3/3); the
+`01_parity` screenshots in sections 1b and 2 show gold read identically by all three engines.
 
 ## 1. Batch path
 
@@ -70,7 +71,7 @@ reason "not as described", order `O-20261108114228-85273`), written by `gen:batc
 | 2 | GCS `returns/returns-20261108T115413-7.json`, then rows 3–4 of 1a (notification → `NI_LANDING`) | upload + `OBJECT_FINALIZE` | Terraform · `gcp/` | — | NDJSON |
 | 3 | Pipe `BRONZE.PIPE_RETURNS` → `BRONZE.RETURNS_RAW` | Snowpipe auto-ingest (`COPY INTO`) | DCM · `ingest.sql`; table: Terraform · `snowflake/bronze.tf` | scan started 11:54:14.96, **≈ 2 s** after the drop (returns files: 1–146 s, median 44 s) | Iceberg · SF, SP; DD `[CHECK: not tested]` |
 | 4 | `SILVER.RETURNS` | dbt table, one row per `return_id` | dbt · `dbt/models/silver/returns.sql` | next dbt run | Iceberg · SF, SP, DD `[CHECK: not tested]` |
-| 5 | `GOLD.RETURN_RATES` | dbt table: returned vs delivered units per category (joins `SILVER.RETURNS`, `SILVER.PRODUCTS` and the order lines) | dbt · `dbt/models/gold/return_rates.sql` | same run | Iceberg · SF, SP, **DD** (no PII; tags: none) |
+| 5 | `GOLD.RETURN_RATES` | dbt table: returned vs delivered units per category (joins `SILVER.RETURNS`, `SILVER.PRODUCTS` and the order lines) | dbt · `dbt/models/gold/return_rates.sql` | same run | Iceberg · SF, SP, **DD** (no PII, no tags; see the parity note below) |
 
 **Before and after.** At 11:55:22 the return was in `BRONZE.RETURNS_RAW` but not yet in `SILVER.RETURNS`
 (it was waiting for the next dbt run). We read `GOLD.RETURN_RATES` then and again after the run:
@@ -87,6 +88,19 @@ units doubled (57 → 118) because the stream kept delivering orders during thos
 rate went down although returns went up. For our return: dropped 11:54:13 → Snowpipe scan 11:54:15 →
 dbt run 12:06:01–12:06:30 → in gold, **≈ 12 min 17 s after the drop**, against 3 min 37 s for the customer
 change in 1a. The difference is only where in the 15-minute cycle the file landed.
+
+Engines, batch gold: `01_parity` reads the two other dbt gold tables (`DAILY_SALES_BY_CATEGORY` and
+`CUSTOMER_LTV`) in Snowflake, Spark and DuckDB and finds identical results. `RETURN_RATES` is built the same way
+(dbt, Iceberg, no tags or policies) but is not one of the three parity queries.
+`[CHECK: optional, to show it directly: in a marimo cell run duckdb_df("SELECT * FROM {db}.GOLD.RETURN_RATES ORDER BY category", "ANALYST_USER") and screenshot it.]`
+
+<img src="img/parity_daily_sales_by_category.png" alt="01_parity: GOLD.DAILY_SALES_BY_CATEGORY identical in Snowflake, Spark and DuckDB" width="760">
+
+*`GOLD.DAILY_SALES_BY_CATEGORY`: identical in all three engines.*
+
+<img src="img/parity_customer_ltv.png" alt="01_parity: GOLD.CUSTOMER_LTV summary identical in Snowflake, Spark and DuckDB" width="760">
+
+*`GOLD.CUSTOMER_LTV` (394 customers, total LTV 179765.12): identical in all three engines.*
 
 The returned order `O-20261108114228-85273` was itself produced by `gen:stream` (section 2), so the two
 paths meet at gold: `RETURN_RATES` also reads `BRONZE.ORDERS_EVENTS` through the `latest_orders()` macro
@@ -114,11 +128,30 @@ Freshness end to end: **≈ 5–13 s to bronze, then a mean of ~95 s and at most
 `INFORMATION_SCHEMA.DYNAMIC_TABLES()` reports `MEAN_LAG_SEC` and `MAXIMUM_LAG_SEC` per dynamic table). The gold lag
 is not the sum of two 5-minute lags: the chained tables refresh together.
 
+<img src="img/dt_orders_by_country_status_rt_overview.png" alt="Snowsight overview of the dynamic table GOLD.ORDERS_BY_COUNTRY_STATUS_RT" width="760">
+
+*Snowsight, `GOLD.ORDERS_BY_COUNTRY_STATUS_RT` → Overview: Iceberg table, scheduling state Active, last refresh
+Succeeded, refresh mode **Full**, target lag **5 min**, maximum lag **3 minutes** (we measured 195 s), warehouse
+`WH_TRANSFORM`, owner `PIPELINE_ADMIN`.*
+
+<img src="img/parity_rt_by_country_status.png" alt="01_parity: GOLD.ORDERS_BY_COUNTRY_STATUS_RT read by Snowflake, Spark and DuckDB, identical" width="760">
+
+*Engines, streaming gold: the lab notebook `01_parity` reads `GOLD.ORDERS_BY_COUNTRY_STATUS_RT` in Snowflake, Spark
+and DuckDB (as `ANALYST` / `ANALYST_USER`) and reports "Identical in all three engines".*
+
 ## 3. Lineage graphs
 
-Paste a Snowsight screenshot (**Catalog → Database Explorer → LAKEHOUSE → GOLD → table → Lineage**) or
-render the diagrams below (mermaid.live, or a Markdown preview with Mermaid).
-`[SCREENSHOT: Lineage tab of GOLD.RETURN_RATES]` `[SCREENSHOT: Lineage tab of GOLD.ORDERS_BY_COUNTRY_STATUS_RT]`
+Snowsight (**Catalog → Database Explorer → LAKEHOUSE → GOLD → table → Lineage**) shows what Snowflake itself
+tracks, one level upstream. Snowflake only sees its own objects, so the diagrams further down add the steps
+outside it (GCS, Pub/Sub, the bridge) from the code.
+
+<img src="img/lineage_return_rates.png" alt="Snowsight lineage of GOLD.RETURN_RATES: SILVER.RETURNS and SILVER.PRODUCTS feed GOLD.RETURN_RATES" width="760">
+
+*Batch gold: `SILVER.RETURNS` and `SILVER.PRODUCTS` feed `GOLD.RETURN_RATES`.*
+
+<img src="img/lineage_orders_by_country_status_rt.png" alt="Snowsight lineage of GOLD.ORDERS_BY_COUNTRY_STATUS_RT: SILVER.ORDERS_LATEST feeds it" width="760">
+
+*Streaming gold: the dynamic table `SILVER.ORDERS_LATEST` feeds `GOLD.ORDERS_BY_COUNTRY_STATUS_RT`.*
 
 Snowflake's own lineage (`SNOWFLAKE.CORE.GET_LINEAGE('LAKEHOUSE.GOLD.<table>', 'TABLE', 'UPSTREAM', 5)`, run on `03b`):
 
@@ -130,9 +163,10 @@ Snowflake's own lineage (`SNOWFLAKE.CORE.GET_LINEAGE('LAKEHOUSE.GOLD.<table>', '
 | `GOLD.ORDERS_BY_COUNTRY_STATUS_RT` | `SILVER.ORDERS_LATEST` (dynamic table) ← `BRONZE.ORDERS_EVENTS` |
 | `SILVER.CUSTOMERS_CURRENT` | `SILVER.CUSTOMERS_SCD2` ← `BRONZE.CUSTOMERS_RAW` |
 
-Note: `GET_LINEAGE` for `RETURN_RATES` does not list `BRONZE.ORDERS_EVENTS` (it did the same on the first
-environment), although `return_rates.sql` reads it through `latest_orders()`.
-`[CHECK: look at the Snowsight Lineage tab for RETURN_RATES; if it also lacks ORDERS_EVENTS, keep one sentence saying lineage is built from query history and can miss an input.]`
+Note: neither `GET_LINEAGE` nor the Snowsight Lineage tab lists `BRONZE.ORDERS_EVENTS` as an input of
+`RETURN_RATES` (only `SILVER.RETURNS` and `SILVER.PRODUCTS`, see the screenshot above), although
+`return_rates.sql` reads it through the `latest_orders()` macro. The code (`dbt/models/gold/return_rates.sql`,
+`dbt/macros/order_status.sql`) is therefore the reliable source for that dependency.
 
 **Batch path**
 
@@ -216,22 +250,46 @@ What each role sees for our two records (queried in Snowflake with `--role`, syn
 The `SUPPORT` e-mail comes from `BRONZE.CUSTOMERS_RAW`: on `SILVER.CUSTOMERS_CURRENT` the row policy filters by
 user, so only `SUPPORT_USER` (not `TERRAFORM_SVC` acting as `SUPPORT`) gets rows there.
 
-`[SCREENSHOT: lab/notebooks/02_masking, Snowflake and Spark side by side, for ANALYST_USER on SILVER.CUSTOMERS_CURRENT and on SILVER.ORDERS_LATEST]`
+The lab notebook `02_masking` shows the same for `email` (batch) in Snowflake and in Spark through Horizon, for
+`SILVER.CUSTOMERS_CURRENT` (first 20 rows). The two engines match for each user, and DuckDB is refused with
+`Unable to plan scan for table CUSTOMERS_CURRENT, but table's config disabled non-server-side scan planning`.
+
+<img src="img/masking_pii_admin_customers_current.png" alt="02_masking: PII_ADMIN_USER sees clear values in Snowflake and Spark; DuckDB is refused" width="760">
+
+*`PII_ADMIN_USER`: clear values in both engines.*
+
+<img src="img/masking_support_customers_current.png" alt="02_masking: SUPPORT_USER sees partly masked values in Snowflake and Spark; DuckDB is refused" width="760">
+
+*`SUPPORT_USER`: partial masking (`B***`, `***@hotmail.com`, `***9073`, date of birth reduced to the year). Customers
+`C000002`, `C000006`, `C000009`, `C000010` and `C000013` are missing: they are German, and the row access policy
+maps `SUPPORT_USER` to PL and NL only.*
+
+<img src="img/masking_analyst_customers_current.png" alt="02_masking: ANALYST_USER sees *** and empty dates of birth in Snowflake and Spark; DuckDB is refused" width="760">
+
+*`ANALYST_USER`: every PII column is `***` and the date of birth is empty, but all countries are visible.*
+
+`[SCREENSHOT: the same notebook with the table dropdown set to SILVER.ORDERS_LATEST, for ANALYST_USER (or SUPPORT_USER), so the streaming ip_address column is shown too. Run the cells below the dropdown again after changing it.]`
 
 ## 5. Comparing the paths
 
 | | Batch | Streaming |
 |---|---|---|
 | **Latency** | file → bronze: 1–285 s, medians 44–63 s (Snowpipe). Silver/gold: wait for the next dbt run, **every 15 min** (22–29 s run). Worst case ≈ 18–20 min. Measured examples: 3 min 37 s (customer change), 12 min 17 s (return to gold); the gap is where in the cycle the file landed. | publish → bronze ≈ 5–13 s. Gold: mean ~95 s, max ~195 s (target lag **5 min**). Measured example: seconds + the next refresh. |
-| **Cost drivers** | Snowpipe (serverless, per file) + `WH_TRANSFORM` X-Small for ~25 s per run; with 60 s auto-suspend a run is billed ≈ 1.4 min, ≈ 0.02 credits, so about 4 runs/h ≈ 0.1 credits/h `[CHECK: estimate, not measured]` | Snowpipe Streaming (serverless) + dynamic-table refreshes on `WH_TRANSFORM` every few minutes (1–2 s each, but each wakes the warehouse), so it is awake much of the time; `var.dt_target_lag` says 1 min ≈ 24 credits/day, 5 min "cheap". Orders and gold are FULL refreshes (recomputed each time). Also the bridge process on the laptop and Pub/Sub. |
+| **Cost drivers** | Snowpipe (serverless, per file) + `WH_TRANSFORM` X-Small for ~25 s per run; with 60 s auto-suspend a run is billed ≈ 1.4 min, ≈ 0.02 credits, so about 4 runs/h ≈ 0.1 credits/h `[CHECK: estimate, not measured]` | Snowpipe Streaming (serverless) + dynamic-table refreshes on `WH_TRANSFORM` every few minutes (1–2 s each, but each wakes the warehouse), so it is awake much of the time; `var.dt_target_lag` says 1 min ≈ 24 credits/day, 5 min "cheap". Orders and gold are FULL refreshes (recomputed each time; Snowsight's insight on the gold table says `REFRESH_MODE = AUTO was resolved to FULL`). Also the bridge process on the laptop and Pub/Sub. |
 | **Where duplicates are removed** | In **dbt, silver**: `customers_scd2` keeps one row per `(customer_id, updated_at)` (latest `_ingested_at`); `products` by `product_id`; `returns` by `return_id`; the gold macro `latest_orders()` dedups orders by `event_id` again. Snowpipe also does not reload a file it already loaded (load history). Bronze keeps whatever arrived. | **Not in bronze** (append-only). The bridge is at-least-once: a crash or Ctrl-C re-delivers un-acked messages. Removed in the **dynamic tables**: `SILVER.ORDERS_LATEST` and `SILVER.CLICKSTREAM` by `event_id`; then the latest status per order by `event_ts` (not arrival order). |
 | **Duplicates seen** | none: `CUSTOMERS_RAW` 2160 rows = 2160 distinct `(customer_id, updated_at)`; `RETURNS_RAW` 70 = 70 distinct `return_id` | none: `ORDERS_EVENTS` 1253 rows = 1253 distinct `event_id`; `CLICKSTREAM_EVENTS` 3878 = 3878 |
 
 **Cost measured so far** (04:01 Pacific, 39 min after the rebuild). `WH_TRANSFORM`: 0.320 credits since 03:00,
 ≈ 0.5 credits/h, **shared by both paths** (the dbt task, the dynamic tables and the refreshes the test suite
-triggers run on it). Snowpipe: ≈ 0.000002 credits for 24 files (negligible). `ACCOUNT_USAGE`, and so
-`mise run cost`, lags up to ~3 h, so the serverless rows are still 0.000.
-`[CHECK: re-run mise run cost 3+ hours after the data started and fill in credits per service (and the total against the 12-credit cap). To split the shared warehouse, compare the number of TASK_HISTORY runs with DYNAMIC_TABLE_REFRESH_HISTORY refreshes.]`
+triggers run on it). Snowpipe: ≈ 0.000002 credits for 24 files (negligible).
+
+`mise run cost` (`docs/run2(03b)/cost.txt`, taken about 1 h 10 min after the data started, account-wide for the last
+31 days, so it **includes the first environment** of 2026-11-07): **2.86 of 12 credits (24 %, ≈ $11.16 at $3.90/credit)**.
+Warehouses 2.84 credits (99 %), serverless 0.02: `SERVERLESS_TASK` 0.010, `EXTERNAL_GOVERNANCE` 0.009,
+`COPY_FILES` 0.002, `TABLE_OPTIMIZATION` 0.002; `PIPE` and `SNOWPIPE_STREAMING` still 0.000. The cost is almost all
+warehouse time (dbt, dynamic tables, our own queries and the test suite), not ingestion. `ACCOUNT_USAGE` lags up to
+~3 h, so the latest usage and the Snowpipe rows are not final.
+`[CHECK: re-run mise run cost after about 15:30 local time (3 h after the data started), replace the figures above, and say that the total includes both environments. To split the shared warehouse between the paths, compare the number of TASK_HISTORY runs with DYNAMIC_TABLE_REFRESH_HISTORY refreshes.]`
 
 ## 6. Open items before you export
 
@@ -239,8 +297,6 @@ triggers run on it). Snowpipe: ≈ 0.000002 credits for 24 files (negligible). `
 |---|---|
 | Names, PDF file name (`03` or `03b`) | ask the teacher; names in the header |
 | Confirm the `CUSTOMER_LTV` / return interpretation (section 0) | teacher / task text |
-| Snowsight lineage screenshots (section 3) | Catalog → Database Explorer, after the first dbt run |
-| `RETURN_RATES` lineage lacks `ORDERS_EVENTS` (section 3) | Snowsight Lineage tab |
-| Masking screenshot incl. Spark (section 4) | marimo `02_masking` |
+| Masking screenshot for `ip_address` (section 4, last marker) | marimo `02_masking`, table dropdown = `SILVER.ORDERS_LATEST` |
 | Cost per service (section 5) | `mise run cost` after 3+ hours |
 | Page count 2–4 | delete this section and the draft box, shorten section 0 and the tables |
