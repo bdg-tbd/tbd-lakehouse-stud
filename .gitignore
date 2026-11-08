@@ -44,7 +44,7 @@ terraform.rc
 # planout
 .idea
 # TBD lakehouse exercise
-.env
+#.env
 .secrets/
 .state/
 bootstrap/terraform.tfstate*

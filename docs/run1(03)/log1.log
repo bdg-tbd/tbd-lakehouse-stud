@@ -1,0 +1,3254 @@
+  # snowflake_grant_privileges_to_account_role.demo_db["PII_ADMIN"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_db" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "LAKEHOUSE"
+          + object_type = "DATABASE"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_db["SUPPORT"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_db" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "LAKEHOUSE"
+          + object_type = "DATABASE"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.DYNAMIC TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "DYNAMIC TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.ICEBERG TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "ICEBERG TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.VIEWS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "VIEWS"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.DYNAMIC TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "DYNAMIC TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.ICEBERG TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "ICEBERG TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.VIEWS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "VIEWS"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.DYNAMIC TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "DYNAMIC TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.ICEBERG TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "ICEBERG TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.VIEWS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "VIEWS"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.DYNAMIC TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "DYNAMIC TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.ICEBERG TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "ICEBERG TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.VIEWS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "VIEWS"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.DYNAMIC TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "DYNAMIC TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.ICEBERG TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "ICEBERG TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.VIEWS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "VIEWS"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.DYNAMIC TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "DYNAMIC TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.ICEBERG TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "ICEBERG TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.VIEWS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "VIEWS"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.DYNAMIC TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "DYNAMIC TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.ICEBERG TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "ICEBERG TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.VIEWS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "VIEWS"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.DYNAMIC TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "DYNAMIC TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.ICEBERG TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "ICEBERG TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.VIEWS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "VIEWS"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.DYNAMIC TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "DYNAMIC TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.ICEBERG TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "ICEBERG TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.TABLES"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "TABLES"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.VIEWS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_future_select" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "SELECT",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + future {
+              + in_schema          = (known after apply)
+              + object_type_plural = "VIEWS"
+            }
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_schemas["ANALYST.BRONZE"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_schemas" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_schemas["ANALYST.GOLD"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_schemas" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_schemas["ANALYST.SILVER"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_schemas" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_schemas["PII_ADMIN.BRONZE"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_schemas" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_schemas["PII_ADMIN.GOLD"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_schemas" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_schemas["PII_ADMIN.SILVER"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_schemas" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_schemas["SUPPORT.BRONZE"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_schemas" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_schemas["SUPPORT.GOLD"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_schemas" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_schemas["SUPPORT.SILVER"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_schemas" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_warehouse["ANALYST"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_warehouse" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "WH_QUERY"
+          + object_type = "WAREHOUSE"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_warehouse["PII_ADMIN"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_warehouse" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "WH_QUERY"
+          + object_type = "WAREHOUSE"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.demo_warehouse["SUPPORT"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "demo_warehouse" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "WH_QUERY"
+          + object_type = "WAREHOUSE"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.external_volume["ANALYST"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "external_volume" {
+      + account_role_name           = "ANALYST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "EV_LAKEHOUSE"
+          + object_type = "EXTERNAL VOLUME"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.external_volume["INGEST"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "external_volume" {
+      + account_role_name           = "INGEST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "EV_LAKEHOUSE"
+          + object_type = "EXTERNAL VOLUME"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.external_volume["PII_ADMIN"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "external_volume" {
+      + account_role_name           = "PII_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "EV_LAKEHOUSE"
+          + object_type = "EXTERNAL VOLUME"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.external_volume["PIPELINE_ADMIN"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "external_volume" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "EV_LAKEHOUSE"
+          + object_type = "EXTERNAL VOLUME"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.external_volume["SUPPORT"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "external_volume" {
+      + account_role_name           = "SUPPORT"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "EV_LAKEHOUSE"
+          + object_type = "EXTERNAL VOLUME"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.ingest_bronze will be created
+  + resource "snowflake_grant_privileges_to_account_role" "ingest_bronze" {
+      + account_role_name           = "INGEST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.ingest_db will be created
+  + resource "snowflake_grant_privileges_to_account_role" "ingest_db" {
+      + account_role_name           = "INGEST"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "LAKEHOUSE"
+          + object_type = "DATABASE"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_account will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_account" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = true
+      + privileges                  = [
+          + "APPLY ROW ACCESS POLICY",
+          + "APPLY TAG",
+          + "EXECUTE TASK",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_apply_rap will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_apply_rap" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "APPLY",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema_object {
+          + object_name = (known after apply)
+          + object_type = "ROW ACCESS POLICY"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_db will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_db" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "MONITOR",
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "LAKEHOUSE"
+          + object_type = "DATABASE"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_integrations["ni"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_integrations" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "NI_LANDING"
+          + object_type = "INTEGRATION"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_integrations["si"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_integrations" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "SI_LANDING"
+          + object_type = "INTEGRATION"
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_schemas["BRONZE"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_schemas" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = true
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_schemas["GOLD"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_schemas" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = true
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_schemas["GOVERNANCE"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_schemas" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = true
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_schemas["OPS"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_schemas" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = true
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_schemas["SILVER"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_schemas" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = true
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_schema {
+          + schema_name = (known after apply)
+        }
+    }
+
+  # snowflake_grant_privileges_to_account_role.pipeline_warehouses["query"] will be created
+  + resource "snowflake_grant_privileges_to_account_role" "pipeline_warehouses" {
+      + account_role_name           = "PIPELINE_ADMIN"
+      + all_privileges              = false
+      + always_apply                = false
+      + id                          = (known after apply)
+      + on_account                  = false
+      + privileges                  = [
+          + "OPERATE",
+          + "USAGE",
+        ]
+      + strict_privilege_management = false
+      + with_grant_option           = false
+
+      + on_account_object {
+          + object_name = "WH_QUERY"
+          + object_type = "WAREHOUSE"
+        }
+    }
+
+  # snowflake_iceberg_table.bronze["CLICKSTREAM_EVENTS"] will be created
+  + resource "snowflake_iceberg_table" "bronze" {
+      + base_location                   = "bronze/clickstream_events"
+      + catalog                         = "SNOWFLAKE"
+      + catalog_sync                    = (known after apply)
+      + change_tracking                 = "true"
+      + data_retention_time_in_days     = (known after apply)
+      + database                        = "LAKEHOUSE"
+      + describe_output                 = (known after apply)
+      + enable_data_compaction          = (known after apply)
+      + enable_iceberg_merge_on_read    = (known after apply)
+      + error_logging                   = "default"
+      + external_volume                 = "EV_LAKEHOUSE"
+      + fully_qualified_name            = (known after apply)
+      + id                              = (known after apply)
+      + max_data_extension_time_in_days = (known after apply)
+      + name                            = "CLICKSTREAM_EVENTS"
+      + parameters                      = (known after apply)
+      + schema                          = "BRONZE"
+      + show_output                     = (known after apply)
+      + storage_serialization_policy    = (known after apply)
+      + target_file_size                = (known after apply)
+
+      + column {
+          + name     = "EVENT_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "EVENT_TYPE"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "EVENT_TS"
+          + not_null = "default"
+          + type     = "TIMESTAMP_NTZ(6)"
+        }
+      + column {
+          + name     = "SESSION_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "CUSTOMER_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "PRODUCT_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "PAGE"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "IP_ADDRESS"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "_INGESTED_AT"
+          + not_null = "default"
+          + type     = "TIMESTAMP_LTZ(6)"
+        }
+    }
+
+  # snowflake_iceberg_table.bronze["CUSTOMERS_RAW"] will be created
+  + resource "snowflake_iceberg_table" "bronze" {
+      + base_location                   = "bronze/customers_raw"
+      + catalog                         = "SNOWFLAKE"
+      + catalog_sync                    = (known after apply)
+      + change_tracking                 = "true"
+      + data_retention_time_in_days     = (known after apply)
+      + database                        = "LAKEHOUSE"
+      + describe_output                 = (known after apply)
+      + enable_data_compaction          = (known after apply)
+      + enable_iceberg_merge_on_read    = (known after apply)
+      + error_logging                   = "default"
+      + external_volume                 = "EV_LAKEHOUSE"
+      + fully_qualified_name            = (known after apply)
+      + id                              = (known after apply)
+      + max_data_extension_time_in_days = (known after apply)
+      + name                            = "CUSTOMERS_RAW"
+      + parameters                      = (known after apply)
+      + schema                          = "BRONZE"
+      + show_output                     = (known after apply)
+      + storage_serialization_policy    = (known after apply)
+      + target_file_size                = (known after apply)
+
+      + column {
+          + name     = "CUSTOMER_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "FIRST_NAME"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "LAST_NAME"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "EMAIL"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "PHONE"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "DATE_OF_BIRTH"
+          + not_null = "default"
+          + type     = "DATE"
+        }
+      + column {
+          + name     = "STREET"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "CITY"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "POSTAL_CODE"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "COUNTRY"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "UPDATED_AT"
+          + not_null = "default"
+          + type     = "TIMESTAMP_NTZ(6)"
+        }
+      + column {
+          + name     = "_FILE"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "_INGESTED_AT"
+          + not_null = "default"
+          + type     = "TIMESTAMP_LTZ(6)"
+        }
+    }
+
+  # snowflake_iceberg_table.bronze["ORDERS_EVENTS"] will be created
+  + resource "snowflake_iceberg_table" "bronze" {
+      + base_location                   = "bronze/orders_events"
+      + catalog                         = "SNOWFLAKE"
+      + catalog_sync                    = (known after apply)
+      + change_tracking                 = "true"
+      + data_retention_time_in_days     = (known after apply)
+      + database                        = "LAKEHOUSE"
+      + describe_output                 = (known after apply)
+      + enable_data_compaction          = (known after apply)
+      + enable_iceberg_merge_on_read    = (known after apply)
+      + error_logging                   = "default"
+      + external_volume                 = "EV_LAKEHOUSE"
+      + fully_qualified_name            = (known after apply)
+      + id                              = (known after apply)
+      + max_data_extension_time_in_days = (known after apply)
+      + name                            = "ORDERS_EVENTS"
+      + parameters                      = (known after apply)
+      + schema                          = "BRONZE"
+      + show_output                     = (known after apply)
+      + storage_serialization_policy    = (known after apply)
+      + target_file_size                = (known after apply)
+
+      + column {
+          + name     = "EVENT_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "EVENT_TYPE"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "EVENT_TS"
+          + not_null = "default"
+          + type     = "TIMESTAMP_NTZ(6)"
+        }
+      + column {
+          + name     = "ORDER_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "CUSTOMER_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "ITEMS_JSON"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "TOTAL_AMOUNT"
+          + not_null = "default"
+          + type     = "NUMBER(12,2)"
+        }
+      + column {
+          + name     = "CURRENCY"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "PAYMENT_METHOD"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "CARD_LAST4"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "IP_ADDRESS"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "SHIPPING_STREET"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "SHIPPING_CITY"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "SHIPPING_POSTAL_CODE"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "SHIPPING_COUNTRY"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "_INGESTED_AT"
+          + not_null = "default"
+          + type     = "TIMESTAMP_LTZ(6)"
+        }
+    }
+
+  # snowflake_iceberg_table.bronze["PRODUCTS_RAW"] will be created
+  + resource "snowflake_iceberg_table" "bronze" {
+      + base_location                   = "bronze/products_raw"
+      + catalog                         = "SNOWFLAKE"
+      + catalog_sync                    = (known after apply)
+      + change_tracking                 = "true"
+      + data_retention_time_in_days     = (known after apply)
+      + database                        = "LAKEHOUSE"
+      + describe_output                 = (known after apply)
+      + enable_data_compaction          = (known after apply)
+      + enable_iceberg_merge_on_read    = (known after apply)
+      + error_logging                   = "default"
+      + external_volume                 = "EV_LAKEHOUSE"
+      + fully_qualified_name            = (known after apply)
+      + id                              = (known after apply)
+      + max_data_extension_time_in_days = (known after apply)
+      + name                            = "PRODUCTS_RAW"
+      + parameters                      = (known after apply)
+      + schema                          = "BRONZE"
+      + show_output                     = (known after apply)
+      + storage_serialization_policy    = (known after apply)
+      + target_file_size                = (known after apply)
+
+      + column {
+          + name     = "PRODUCT_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "NAME"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "CATEGORY"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "UNIT_PRICE"
+          + not_null = "default"
+          + type     = "NUMBER(10,2)"
+        }
+      + column {
+          + name     = "UPDATED_AT"
+          + not_null = "default"
+          + type     = "TIMESTAMP_NTZ(6)"
+        }
+      + column {
+          + name     = "_FILE"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "_INGESTED_AT"
+          + not_null = "default"
+          + type     = "TIMESTAMP_LTZ(6)"
+        }
+    }
+
+  # snowflake_iceberg_table.bronze["RETURNS_RAW"] will be created
+  + resource "snowflake_iceberg_table" "bronze" {
+      + base_location                   = "bronze/returns_raw"
+      + catalog                         = "SNOWFLAKE"
+      + catalog_sync                    = (known after apply)
+      + change_tracking                 = "true"
+      + data_retention_time_in_days     = (known after apply)
+      + database                        = "LAKEHOUSE"
+      + describe_output                 = (known after apply)
+      + enable_data_compaction          = (known after apply)
+      + enable_iceberg_merge_on_read    = (known after apply)
+      + error_logging                   = "default"
+      + external_volume                 = "EV_LAKEHOUSE"
+      + fully_qualified_name            = (known after apply)
+      + id                              = (known after apply)
+      + max_data_extension_time_in_days = (known after apply)
+      + name                            = "RETURNS_RAW"
+      + parameters                      = (known after apply)
+      + schema                          = "BRONZE"
+      + show_output                     = (known after apply)
+      + storage_serialization_policy    = (known after apply)
+      + target_file_size                = (known after apply)
+
+      + column {
+          + name     = "RETURN_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "ORDER_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "PRODUCT_ID"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "QTY"
+          + not_null = "default"
+          + type     = "NUMBER(38,0)"
+        }
+      + column {
+          + name     = "REASON"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "RETURNED_AT"
+          + not_null = "default"
+          + type     = "TIMESTAMP_NTZ(6)"
+        }
+      + column {
+          + name     = "_FILE"
+          + not_null = "default"
+          + type     = "VARCHAR(134217728)"
+        }
+      + column {
+          + name     = "_INGESTED_AT"
+          + not_null = "default"
+          + type     = "TIMESTAMP_LTZ(6)"
+        }
+    }
+
+  # snowflake_masking_policy.pii_date will be created
+  + resource "snowflake_masking_policy" "pii_date" {
+      + body                  = <<-EOT
+            CASE
+              WHEN CURRENT_ROLE() IN ('PII_ADMIN', 'PIPELINE_ADMIN') THEN val
+              WHEN CURRENT_ROLE() = 'SUPPORT' THEN DATE_FROM_PARTS(YEAR(val), 1, 1)
+              ELSE NULL
+            END
+        EOT
+      + comment               = "PII_TYPE-driven masking for date columns (DOB)"
+      + database              = "LAKEHOUSE"
+      + describe_output       = (known after apply)
+      + exempt_other_policies = "default"
+      + fully_qualified_name  = (known after apply)
+      + id                    = (known after apply)
+      + name                  = "MP_PII_DATE"
+      + return_data_type      = "DATE"
+      + schema                = "GOVERNANCE"
+      + show_output           = (known after apply)
+
+      + argument {
+          + name = "VAL"
+          + type = "DATE"
+        }
+    }
+
+  # snowflake_masking_policy.pii_string will be created
+  + resource "snowflake_masking_policy" "pii_string" {
+      + body                  = <<-EOT
+            CASE
+              -- Only the primary role counts: secondary roles must never unmask data.
+              WHEN CURRENT_ROLE() IN ('PII_ADMIN', 'PIPELINE_ADMIN') THEN val
+              WHEN CURRENT_ROLE() = 'SUPPORT' THEN
+                CASE SYSTEM$GET_TAG_ON_CURRENT_COLUMN('LAKEHOUSE.GOVERNANCE.PII_TYPE')
+                  WHEN 'NAME'  THEN LEFT(val, 1) || '***'
+                  WHEN 'EMAIL' THEN '***@' || SPLIT_PART(val, '@', 2)
+                  WHEN 'PHONE' THEN '***' || RIGHT(REGEXP_REPLACE(val, '[^0-9]', ''), 4)
+                  WHEN 'IP'    THEN SPLIT_PART(val, '.', 1) || '.' || SPLIT_PART(val, '.', 2) || '.x.x'
+                  WHEN 'CARD'  THEN val
+                  ELSE '***'
+                END
+              ELSE '***'
+            END
+        EOT
+      + comment               = "PII_TYPE-driven masking for text columns"
+      + database              = "LAKEHOUSE"
+      + describe_output       = (known after apply)
+      + exempt_other_policies = "default"
+      + fully_qualified_name  = (known after apply)
+      + id                    = (known after apply)
+      + name                  = "MP_PII_STRING"
+      + return_data_type      = "VARCHAR(16777216)"
+      + schema                = "GOVERNANCE"
+      + show_output           = (known after apply)
+
+      + argument {
+          + name = "VAL"
+          + type = "VARCHAR(16777216)"
+        }
+    }
+
+  # snowflake_notification_integration.landing will be created
+  + resource "snowflake_notification_integration" "landing" {
+      + aws_sns_external_id          = (known after apply)
+      + aws_sns_iam_user_arn         = (known after apply)
+      + aws_sqs_external_id          = (known after apply)
+      + aws_sqs_iam_user_arn         = (known after apply)
+      + comment                      = "GCS OBJECT_FINALIZE events for Snowpipe auto-ingest"
+      + created_on                   = (known after apply)
+      + enabled                      = true
+      + fully_qualified_name         = (known after apply)
+      + gcp_pubsub_service_account   = (known after apply)
+      + gcp_pubsub_subscription_name = "projects/tbd-2026z-stud03-data/subscriptions/landing-notifications-snowpipe"
+      + id                           = (known after apply)
+      + name                         = "NI_LANDING"
+      + notification_provider        = "GCP_PUBSUB"
+      + type                         = "QUEUE"
+    }
+
+  # snowflake_procedure_sql.start_all will be created
+  + resource "snowflake_procedure_sql" "start_all" {
+      + comment               = "Resume pipelines unless RM_LAB is exhausted (mise run start)"
+      + database              = "LAKEHOUSE"
+      + enable_console_output = (known after apply)
+      + execute_as            = "OWNER"
+      + fully_qualified_name  = (known after apply)
+      + id                    = (known after apply)
+      + is_secure             = "default"
+      + log_event_level       = (known after apply)
+      + log_level             = (known after apply)
+      + metric_level          = (known after apply)
+      + name                  = "START_ALL"
+      + parameters            = (known after apply)
+      + procedure_definition  = <<-EOT
+            -- Resume pipelines after `mise run stop`. Refuses once RM_LAB has used the whole cap.
+            DECLARE
+              log VARCHAR DEFAULT '';
+              stmts ARRAY DEFAULT ARRAY_CONSTRUCT();
+              used FLOAT DEFAULT 0;
+              quota FLOAT DEFAULT 1;
+              rs RESULTSET;
+            BEGIN
+              SHOW RESOURCE MONITORS LIKE 'RM_LAB';
+              SELECT COALESCE(MAX("used_credits"::FLOAT), 0), COALESCE(MAX("credit_quota"::FLOAT), 1)
+                INTO :used, :quota FROM TABLE(RESULT_SCAN(LAST_QUERY_ID()));
+              IF (used >= quota) THEN
+                RETURN 'refused: RM_LAB has used ' || used || ' of ' || quota || ' credits';
+              END IF;
+
+              SHOW PIPES IN DATABASE LAKEHOUSE;
+              rs := (SELECT 'ALTER PIPE IF EXISTS "' || "database_name" || '"."' || "schema_name" || '"."' || "name" || '" SET PIPE_EXECUTION_PAUSED = FALSE' AS s
+                     FROM TABLE(RESULT_SCAN(LAST_QUERY_ID())));
+              FOR r IN rs DO stmts := ARRAY_APPEND(stmts, r.s); END FOR;
+
+              SHOW DYNAMIC TABLES IN DATABASE LAKEHOUSE;
+              rs := (SELECT 'ALTER DYNAMIC TABLE IF EXISTS "' || "database_name" || '"."' || "schema_name" || '"."' || "name" || '" RESUME' AS s
+                     FROM TABLE(RESULT_SCAN(LAST_QUERY_ID())) WHERE "scheduling_state" = 'SUSPENDED');
+              FOR r IN rs DO stmts := ARRAY_APPEND(stmts, r.s); END FOR;
+
+              SHOW TASKS IN DATABASE LAKEHOUSE;
+              rs := (SELECT 'ALTER TASK IF EXISTS "' || "database_name" || '"."' || "schema_name" || '"."' || "name" || '" RESUME' AS s
+                     FROM TABLE(RESULT_SCAN(LAST_QUERY_ID())) WHERE "state" = 'suspended');
+              FOR r IN rs DO stmts := ARRAY_APPEND(stmts, r.s); END FOR;
+
+              stmts := ARRAY_APPEND(stmts, 'ALTER USER IF EXISTS INGEST_SVC SET DISABLED = FALSE');
+
+              FOR i IN 0 TO ARRAY_SIZE(stmts) - 1 DO
+                LET s VARCHAR := stmts[i];
+                BEGIN
+                  EXECUTE IMMEDIATE :s;
+                  log := log || 'ok: ' || s || '\n';
+                EXCEPTION
+                  WHEN OTHER THEN
+                    log := log || 'skipped: ' || s || ' (' || SQLERRM || ')\n';
+                END;
+              END FOR;
+              RETURN log;
+            END;
+        EOT
+      + procedure_language    = (known after apply)
+      + return_type           = "VARCHAR(16777216)"
+      + schema                = "OPS"
+      + show_output           = (known after apply)
+      + trace_level           = (known after apply)
+    }
+
+  # snowflake_procedure_sql.stop_all will be created
+  + resource "snowflake_procedure_sql" "stop_all" {
+      + comment               = "Suspend everything that can spend credits (mise run stop; budget action)"
+      + database              = "LAKEHOUSE"
+      + enable_console_output = (known after apply)
+      + execute_as            = "OWNER"
+      + fully_qualified_name  = (known after apply)
+      + id                    = (known after apply)
+      + is_secure             = "default"
+      + log_event_level       = (known after apply)
+      + log_level             = (known after apply)
+      + metric_level          = (known after apply)
+      + name                  = "STOP_ALL"
+      + parameters            = (known after apply)
+      + procedure_definition  = <<-EOT
+            -- Suspend every object in LAKEHOUSE that can spend credits. Safe to call repeatedly and
+            -- when objects don't exist yet. Used by `mise run stop` and the budget custom action.
+            DECLARE
+              log VARCHAR DEFAULT '';
+              stmts ARRAY DEFAULT ARRAY_CONSTRUCT();
+              rs RESULTSET;
+            BEGIN
+              SHOW TASKS IN DATABASE LAKEHOUSE;
+              rs := (SELECT 'ALTER TASK IF EXISTS "' || "database_name" || '"."' || "schema_name" || '"."' || "name" || '" SUSPEND' AS s
+                     FROM TABLE(RESULT_SCAN(LAST_QUERY_ID())) WHERE "state" = 'started' AND "name" <> 'NIGHTLY_STOP');
+              FOR r IN rs DO stmts := ARRAY_APPEND(stmts, r.s); END FOR;
+
+              SHOW DYNAMIC TABLES IN DATABASE LAKEHOUSE;
+              rs := (SELECT 'ALTER DYNAMIC TABLE IF EXISTS "' || "database_name" || '"."' || "schema_name" || '"."' || "name" || '" SUSPEND' AS s
+                     FROM TABLE(RESULT_SCAN(LAST_QUERY_ID())) WHERE "scheduling_state" <> 'SUSPENDED');
+              FOR r IN rs DO stmts := ARRAY_APPEND(stmts, r.s); END FOR;
+
+              SHOW PIPES IN DATABASE LAKEHOUSE;
+              rs := (SELECT 'ALTER PIPE IF EXISTS "' || "database_name" || '"."' || "schema_name" || '"."' || "name" || '" SET PIPE_EXECUTION_PAUSED = TRUE' AS s
+                     FROM TABLE(RESULT_SCAN(LAST_QUERY_ID())));
+              FOR r IN rs DO stmts := ARRAY_APPEND(stmts, r.s); END FOR;
+
+              stmts := ARRAY_CAT(stmts, ARRAY_CONSTRUCT(
+                'ALTER USER IF EXISTS INGEST_SVC SET DISABLED = TRUE',
+                'ALTER WAREHOUSE IF EXISTS WH_TRANSFORM SUSPEND',
+                'ALTER WAREHOUSE IF EXISTS WH_QUERY SUSPEND'));
+
+              FOR i IN 0 TO ARRAY_SIZE(stmts) - 1 DO
+                LET s VARCHAR := stmts[i];
+                BEGIN
+                  EXECUTE IMMEDIATE :s;
+                  log := log || 'ok: ' || s || '\n';
+                EXCEPTION
+                  WHEN OTHER THEN
+                    -- e.g. warehouse already suspended
+                    log := log || 'skipped: ' || s || ' (' || SQLERRM || ')\n';
+                END;
+              END FOR;
+              RETURN log;
+            END;
+        EOT
+      + procedure_language    = (known after apply)
+      + return_type           = "VARCHAR(16777216)"
+      + schema                = "OPS"
+      + show_output           = (known after apply)
+      + trace_level           = (known after apply)
+    }
+
+  # snowflake_resource_monitor.lab will be created
+  + resource "snowflake_resource_monitor" "lab" {
+      + credit_quota              = 12
+      + frequency                 = "NEVER"
+      + fully_qualified_name      = (known after apply)
+      + id                        = (known after apply)
+      + name                      = "RM_LAB"
+      + notify_triggers           = [
+          + 50,
+          + 75,
+          + 90,
+        ]
+      + show_output               = (known after apply)
+      + start_timestamp           = "IMMEDIATELY"
+      + suspend_immediate_trigger = 100
+    }
+
+  # snowflake_row_access_policy.support_country will be created
+  + resource "snowflake_row_access_policy" "support_country" {
+      + body                 = <<-EOT
+            CURRENT_ROLE() IN ('PII_ADMIN', 'PIPELINE_ADMIN', 'ANALYST', 'ACCOUNTADMIN')
+            OR EXISTS (
+              SELECT 1 FROM LAKEHOUSE.GOVERNANCE.SUPPORT_COUNTRY_MAP m
+              WHERE m.user_name = CURRENT_USER() AND m.country = country
+            )
+        EOT
+      + comment              = "SUPPORT sees only its mapped countries; attached by dbt to SILVER.CUSTOMERS_CURRENT"
+      + database             = "LAKEHOUSE"
+      + describe_output      = (known after apply)
+      + fully_qualified_name = (known after apply)
+      + id                   = (known after apply)
+      + name                 = "RAP_SUPPORT_COUNTRY"
+      + schema               = "GOVERNANCE"
+      + show_output          = (known after apply)
+
+      + argument {
+          + name = "COUNTRY"
+          + type = "VARCHAR(16777216)"
+        }
+    }
+
+  # snowflake_schema.schemas["BRONZE"] will be created
+  + resource "snowflake_schema" "schemas" {
+      + catalog                                       = (known after apply)
+      + data_retention_time_in_days                   = (known after apply)
+      + database                                      = "LAKEHOUSE"
+      + default_ddl_collation                         = (known after apply)
+      + default_notebook_compute_pool_cpu             = (known after apply)
+      + default_notebook_compute_pool_gpu             = (known after apply)
+      + describe_output                               = (known after apply)
+      + enable_console_output                         = (known after apply)
+      + external_volume                               = (known after apply)
+      + fully_qualified_name                          = (known after apply)
+      + id                                            = (known after apply)
+      + is_transient                                  = "default"
+      + log_event_level                               = (known after apply)
+      + log_level                                     = (known after apply)
+      + max_data_extension_time_in_days               = (known after apply)
+      + name                                          = "BRONZE"
+      + parameters                                    = (known after apply)
+      + pipe_execution_paused                         = (known after apply)
+      + quoted_identifiers_ignore_case                = (known after apply)
+      + replace_invalid_characters                    = (known after apply)
+      + show_output                                   = (known after apply)
+      + storage_serialization_policy                  = (known after apply)
+      + suspend_task_after_num_failures               = (known after apply)
+      + task_auto_retry_attempts                      = (known after apply)
+      + trace_level                                   = (known after apply)
+      + user_task_managed_initial_warehouse_size      = (known after apply)
+      + user_task_minimum_trigger_interval_in_seconds = (known after apply)
+      + user_task_timeout_ms                          = (known after apply)
+      + with_managed_access                           = "default"
+    }
+
+  # snowflake_schema.schemas["GOLD"] will be created
+  + resource "snowflake_schema" "schemas" {
+      + catalog                                       = (known after apply)
+      + data_retention_time_in_days                   = (known after apply)
+      + database                                      = "LAKEHOUSE"
+      + default_ddl_collation                         = (known after apply)
+      + default_notebook_compute_pool_cpu             = (known after apply)
+      + default_notebook_compute_pool_gpu             = (known after apply)
+      + describe_output                               = (known after apply)
+      + enable_console_output                         = (known after apply)
+      + external_volume                               = (known after apply)
+      + fully_qualified_name                          = (known after apply)
+      + id                                            = (known after apply)
+      + is_transient                                  = "default"
+      + log_event_level                               = (known after apply)
+      + log_level                                     = (known after apply)
+      + max_data_extension_time_in_days               = (known after apply)
+      + name                                          = "GOLD"
+      + parameters                                    = (known after apply)
+      + pipe_execution_paused                         = (known after apply)
+      + quoted_identifiers_ignore_case                = (known after apply)
+      + replace_invalid_characters                    = (known after apply)
+      + show_output                                   = (known after apply)
+      + storage_serialization_policy                  = (known after apply)
+      + suspend_task_after_num_failures               = (known after apply)
+      + task_auto_retry_attempts                      = (known after apply)
+      + trace_level                                   = (known after apply)
+      + user_task_managed_initial_warehouse_size      = (known after apply)
+      + user_task_minimum_trigger_interval_in_seconds = (known after apply)
+      + user_task_timeout_ms                          = (known after apply)
+      + with_managed_access                           = "default"
+    }
+
+  # snowflake_schema.schemas["GOVERNANCE"] will be created
+  + resource "snowflake_schema" "schemas" {
+      + catalog                                       = (known after apply)
+      + data_retention_time_in_days                   = (known after apply)
+      + database                                      = "LAKEHOUSE"
+      + default_ddl_collation                         = (known after apply)
+      + default_notebook_compute_pool_cpu             = (known after apply)
+      + default_notebook_compute_pool_gpu             = (known after apply)
+      + describe_output                               = (known after apply)
+      + enable_console_output                         = (known after apply)
+      + external_volume                               = (known after apply)
+      + fully_qualified_name                          = (known after apply)
+      + id                                            = (known after apply)
+      + is_transient                                  = "default"
+      + log_event_level                               = (known after apply)
+      + log_level                                     = (known after apply)
+      + max_data_extension_time_in_days               = (known after apply)
+      + name                                          = "GOVERNANCE"
+      + parameters                                    = (known after apply)
+      + pipe_execution_paused                         = (known after apply)
+      + quoted_identifiers_ignore_case                = (known after apply)
+      + replace_invalid_characters                    = (known after apply)
+      + show_output                                   = (known after apply)
+      + storage_serialization_policy                  = (known after apply)
+      + suspend_task_after_num_failures               = (known after apply)
+      + task_auto_retry_attempts                      = (known after apply)
+      + trace_level                                   = (known after apply)
+      + user_task_managed_initial_warehouse_size      = (known after apply)
+      + user_task_minimum_trigger_interval_in_seconds = (known after apply)
+      + user_task_timeout_ms                          = (known after apply)
+      + with_managed_access                           = "default"
+    }
+
+  # snowflake_schema.schemas["OPS"] will be created
+  + resource "snowflake_schema" "schemas" {
+      + catalog                                       = (known after apply)
+      + data_retention_time_in_days                   = (known after apply)
+      + database                                      = "LAKEHOUSE"
+      + default_ddl_collation                         = (known after apply)
+      + default_notebook_compute_pool_cpu             = (known after apply)
+      + default_notebook_compute_pool_gpu             = (known after apply)
+      + describe_output                               = (known after apply)
+      + enable_console_output                         = (known after apply)
+      + external_volume                               = (known after apply)
+      + fully_qualified_name                          = (known after apply)
+      + id                                            = (known after apply)
+      + is_transient                                  = "default"
+      + log_event_level                               = (known after apply)
+      + log_level                                     = (known after apply)
+      + max_data_extension_time_in_days               = (known after apply)
+      + name                                          = "OPS"
+      + parameters                                    = (known after apply)
+      + pipe_execution_paused                         = (known after apply)
+      + quoted_identifiers_ignore_case                = (known after apply)
+      + replace_invalid_characters                    = (known after apply)
+      + show_output                                   = (known after apply)
+      + storage_serialization_policy                  = (known after apply)
+      + suspend_task_after_num_failures               = (known after apply)
+      + task_auto_retry_attempts                      = (known after apply)
+      + trace_level                                   = (known after apply)
+      + user_task_managed_initial_warehouse_size      = (known after apply)
+      + user_task_minimum_trigger_interval_in_seconds = (known after apply)
+      + user_task_timeout_ms                          = (known after apply)
+      + with_managed_access                           = "default"
+    }
+
+  # snowflake_schema.schemas["SILVER"] will be created
+  + resource "snowflake_schema" "schemas" {
+      + catalog                                       = (known after apply)
+      + data_retention_time_in_days                   = (known after apply)
+      + database                                      = "LAKEHOUSE"
+      + default_ddl_collation                         = (known after apply)
+      + default_notebook_compute_pool_cpu             = (known after apply)
+      + default_notebook_compute_pool_gpu             = (known after apply)
+      + describe_output                               = (known after apply)
+      + enable_console_output                         = (known after apply)
+      + external_volume                               = (known after apply)
+      + fully_qualified_name                          = (known after apply)
+      + id                                            = (known after apply)
+      + is_transient                                  = "default"
+      + log_event_level                               = (known after apply)
+      + log_level                                     = (known after apply)
+      + max_data_extension_time_in_days               = (known after apply)
+      + name                                          = "SILVER"
+      + parameters                                    = (known after apply)
+      + pipe_execution_paused                         = (known after apply)
+      + quoted_identifiers_ignore_case                = (known after apply)
+      + replace_invalid_characters                    = (known after apply)
+      + show_output                                   = (known after apply)
+      + storage_serialization_policy                  = (known after apply)
+      + suspend_task_after_num_failures               = (known after apply)
+      + task_auto_retry_attempts                      = (known after apply)
+      + trace_level                                   = (known after apply)
+      + user_task_managed_initial_warehouse_size      = (known after apply)
+      + user_task_minimum_trigger_interval_in_seconds = (known after apply)
+      + user_task_timeout_ms                          = (known after apply)
+      + with_managed_access                           = "default"
+    }
+
+  # snowflake_service_user.users["ANALYST_USER"] will be created
+  + resource "snowflake_service_user" "users" {
+      + abort_detached_query                          = (known after apply)
+      + autocommit                                    = (known after apply)
+      + binary_input_format                           = (known after apply)
+      + binary_output_format                          = (known after apply)
+      + client_memory_limit                           = (known after apply)
+      + client_metadata_request_use_connection_ctx    = (known after apply)
+      + client_prefetch_threads                       = (known after apply)
+      + client_result_chunk_size                      = (known after apply)
+      + client_result_column_case_insensitive         = (known after apply)
+      + client_session_keep_alive                     = (known after apply)
+      + client_session_keep_alive_heartbeat_frequency = (known after apply)
+      + client_timestamp_type_mapping                 = (known after apply)
+      + comment                                       = "Demo user for ANALYST (Horizon/Spark/DuckDB via PAT)"
+      + date_input_format                             = (known after apply)
+      + date_output_format                            = (known after apply)
+      + default_role                                  = "ANALYST"
+      + default_secondary_roles_option                = "NONE"
+      + default_warehouse                             = "WH_QUERY"
+      + disabled                                      = "default"
+      + enable_unload_physical_type_optimization      = (known after apply)
+      + enable_unredacted_query_syntax_error          = (known after apply)
+      + error_on_nondeterministic_merge               = (known after apply)
+      + error_on_nondeterministic_update              = (known after apply)
+      + fully_qualified_name                          = (known after apply)
+      + geography_output_format                       = (known after apply)
+      + geometry_output_format                        = (known after apply)
+      + id                                            = (known after apply)
+      + jdbc_treat_decimal_as_int                     = (known after apply)
+      + jdbc_treat_timestamp_ntz_as_utc               = (known after apply)
+      + jdbc_use_session_timezone                     = (known after apply)
+      + json_indent                                   = (known after apply)
+      + lock_timeout                                  = (known after apply)
+      + log_event_level                               = (known after apply)
+      + log_level                                     = (known after apply)
+      + mins_to_unlock                                = -1
+      + multi_statement_count                         = (known after apply)
+      + name                                          = "ANALYST_USER"
+      + network_policy                                = (known after apply)
+      + noorder_sequence_as_default                   = (known after apply)
+      + odbc_treat_decimal_as_int                     = (known after apply)
+      + parameters                                    = (known after apply)
+      + prevent_unload_to_internal_stages             = (known after apply)
+      + query_tag                                     = (known after apply)
+      + quoted_identifiers_ignore_case                = (known after apply)
+      + rows_per_resultset                            = (known after apply)
+      + s3_stage_vpce_dns_name                        = (known after apply)
+      + search_path                                   = (known after apply)
+      + show_output                                   = (known after apply)
+      + simulated_data_sharing_consumer               = (known after apply)
+      + statement_queued_timeout_in_seconds           = (known after apply)
+      + statement_timeout_in_seconds                  = (known after apply)
+      + strict_json_output                            = (known after apply)
+      + time_input_format                             = (known after apply)
+      + time_output_format                            = (known after apply)
+      + timestamp_day_is_always_24h                   = (known after apply)
+      + timestamp_input_format                        = (known after apply)
+      + timestamp_ltz_output_format                   = (known after apply)
+      + timestamp_ntz_output_format                   = (known after apply)
+      + timestamp_output_format                       = (known after apply)
+      + timestamp_type_mapping                        = (known after apply)
+      + timestamp_tz_output_format                    = (known after apply)
+      + timezone                                      = (known after apply)
+      + trace_level                                   = (known after apply)
+      + transaction_abort_on_error                    = (known after apply)
+      + transaction_default_isolation_level           = (known after apply)
+      + two_digit_century_start                       = (known after apply)
+      + unsupported_ddl_action                        = (known after apply)
+      + use_cached_result                             = (known after apply)
+      + user_type                                     = "<changed externally>"
+      + week_of_year_policy                           = (known after apply)
+      + week_start                                    = (known after apply)
+    }
+
+  # snowflake_service_user.users["INGEST_SVC"] will be created
+  + resource "snowflake_service_user" "users" {
+      + abort_detached_query                          = (known after apply)
+      + autocommit                                    = (known after apply)
+      + binary_input_format                           = (known after apply)
+      + binary_output_format                          = (known after apply)
+      + client_memory_limit                           = (known after apply)
+      + client_metadata_request_use_connection_ctx    = (known after apply)
+      + client_prefetch_threads                       = (known after apply)
+      + client_result_chunk_size                      = (known after apply)
+      + client_result_column_case_insensitive         = (known after apply)
+      + client_session_keep_alive                     = (known after apply)
+      + client_session_keep_alive_heartbeat_frequency = (known after apply)
+      + client_timestamp_type_mapping                 = (known after apply)
+      + comment                                       = "Pub/Sub -> Snowpipe Streaming bridge"
+      + date_input_format                             = (known after apply)
+      + date_output_format                            = (known after apply)
+      + default_role                                  = "INGEST"
+      + default_secondary_roles_option                = "NONE"
+      + default_warehouse                             = "WH_QUERY"
+      + disabled                                      = "default"
+      + enable_unload_physical_type_optimization      = (known after apply)
+      + enable_unredacted_query_syntax_error          = (known after apply)
+      + error_on_nondeterministic_merge               = (known after apply)
+      + error_on_nondeterministic_update              = (known after apply)
+      + fully_qualified_name                          = (known after apply)
+      + geography_output_format                       = (known after apply)
+      + geometry_output_format                        = (known after apply)
+      + id                                            = (known after apply)
+      + jdbc_treat_decimal_as_int                     = (known after apply)
+      + jdbc_treat_timestamp_ntz_as_utc               = (known after apply)
+      + jdbc_use_session_timezone                     = (known after apply)
+      + json_indent                                   = (known after apply)
+      + lock_timeout                                  = (known after apply)
+      + log_event_level                               = (known after apply)
+      + log_level                                     = (known after apply)
+      + mins_to_unlock                                = -1
+      + multi_statement_count                         = (known after apply)
+      + name                                          = "INGEST_SVC"
+      + network_policy                                = (known after apply)
+      + noorder_sequence_as_default                   = (known after apply)
+      + odbc_treat_decimal_as_int                     = (known after apply)
+      + parameters                                    = (known after apply)
+      + prevent_unload_to_internal_stages             = (known after apply)
+      + query_tag                                     = (known after apply)
+      + quoted_identifiers_ignore_case                = (known after apply)
+      + rows_per_resultset                            = (known after apply)
+      + rsa_public_key                                = (known after apply)
+      + s3_stage_vpce_dns_name                        = (known after apply)
+      + search_path                                   = (known after apply)
+      + show_output                                   = (known after apply)
+      + simulated_data_sharing_consumer               = (known after apply)
+      + statement_queued_timeout_in_seconds           = (known after apply)
+      + statement_timeout_in_seconds                  = (known after apply)
+      + strict_json_output                            = (known after apply)
+      + time_input_format                             = (known after apply)
+      + time_output_format                            = (known after apply)
+      + timestamp_day_is_always_24h                   = (known after apply)
+      + timestamp_input_format                        = (known after apply)
+      + timestamp_ltz_output_format                   = (known after apply)
+      + timestamp_ntz_output_format                   = (known after apply)
+      + timestamp_output_format                       = (known after apply)
+      + timestamp_type_mapping                        = (known after apply)
+      + timestamp_tz_output_format                    = (known after apply)
+      + timezone                                      = (known after apply)
+      + trace_level                                   = (known after apply)
+      + transaction_abort_on_error                    = (known after apply)
+      + transaction_default_isolation_level           = (known after apply)
+      + two_digit_century_start                       = (known after apply)
+      + unsupported_ddl_action                        = (known after apply)
+      + use_cached_result                             = (known after apply)
+      + user_type                                     = "<changed externally>"
+      + week_of_year_policy                           = (known after apply)
+      + week_start                                    = (known after apply)
+    }
+
+  # snowflake_service_user.users["PII_ADMIN_USER"] will be created
+  + resource "snowflake_service_user" "users" {
+      + abort_detached_query                          = (known after apply)
+      + autocommit                                    = (known after apply)
+      + binary_input_format                           = (known after apply)
+      + binary_output_format                          = (known after apply)
+      + client_memory_limit                           = (known after apply)
+      + client_metadata_request_use_connection_ctx    = (known after apply)
+      + client_prefetch_threads                       = (known after apply)
+      + client_result_chunk_size                      = (known after apply)
+      + client_result_column_case_insensitive         = (known after apply)
+      + client_session_keep_alive                     = (known after apply)
+      + client_session_keep_alive_heartbeat_frequency = (known after apply)
+      + client_timestamp_type_mapping                 = (known after apply)
+      + comment                                       = "Demo user for PII_ADMIN (Horizon/Spark/DuckDB via PAT)"
+      + date_input_format                             = (known after apply)
+      + date_output_format                            = (known after apply)
+      + default_role                                  = "PII_ADMIN"
+      + default_secondary_roles_option                = "NONE"
+      + default_warehouse                             = "WH_QUERY"
+      + disabled                                      = "default"
+      + enable_unload_physical_type_optimization      = (known after apply)
+      + enable_unredacted_query_syntax_error          = (known after apply)
+      + error_on_nondeterministic_merge               = (known after apply)
+      + error_on_nondeterministic_update              = (known after apply)
+      + fully_qualified_name                          = (known after apply)
+      + geography_output_format                       = (known after apply)
+      + geometry_output_format                        = (known after apply)
+      + id                                            = (known after apply)
+      + jdbc_treat_decimal_as_int                     = (known after apply)
+      + jdbc_treat_timestamp_ntz_as_utc               = (known after apply)
+      + jdbc_use_session_timezone                     = (known after apply)
+      + json_indent                                   = (known after apply)
+      + lock_timeout                                  = (known after apply)
+      + log_event_level                               = (known after apply)
+      + log_level                                     = (known after apply)
+      + mins_to_unlock                                = -1
+      + multi_statement_count                         = (known after apply)
+      + name                                          = "PII_ADMIN_USER"
+      + network_policy                                = (known after apply)
+      + noorder_sequence_as_default                   = (known after apply)
+      + odbc_treat_decimal_as_int                     = (known after apply)
+      + parameters                                    = (known after apply)
+      + prevent_unload_to_internal_stages             = (known after apply)
+      + query_tag                                     = (known after apply)
+      + quoted_identifiers_ignore_case                = (known after apply)
+      + rows_per_resultset                            = (known after apply)
+      + s3_stage_vpce_dns_name                        = (known after apply)
+      + search_path                                   = (known after apply)
+      + show_output                                   = (known after apply)
+      + simulated_data_sharing_consumer               = (known after apply)
+      + statement_queued_timeout_in_seconds           = (known after apply)
+      + statement_timeout_in_seconds                  = (known after apply)
+      + strict_json_output                            = (known after apply)
+      + time_input_format                             = (known after apply)
+      + time_output_format                            = (known after apply)
+      + timestamp_day_is_always_24h                   = (known after apply)
+      + timestamp_input_format                        = (known after apply)
+      + timestamp_ltz_output_format                   = (known after apply)
+      + timestamp_ntz_output_format                   = (known after apply)
+      + timestamp_output_format                       = (known after apply)
+      + timestamp_type_mapping                        = (known after apply)
+      + timestamp_tz_output_format                    = (known after apply)
+      + timezone                                      = (known after apply)
+      + trace_level                                   = (known after apply)
+      + transaction_abort_on_error                    = (known after apply)
+      + transaction_default_isolation_level           = (known after apply)
+      + two_digit_century_start                       = (known after apply)
+      + unsupported_ddl_action                        = (known after apply)
+      + use_cached_result                             = (known after apply)
+      + user_type                                     = "<changed externally>"
+      + week_of_year_policy                           = (known after apply)
+      + week_start                                    = (known after apply)
+    }
+
+  # snowflake_service_user.users["SUPPORT_USER"] will be created
+  + resource "snowflake_service_user" "users" {
+      + abort_detached_query                          = (known after apply)
+      + autocommit                                    = (known after apply)
+      + binary_input_format                           = (known after apply)
+      + binary_output_format                          = (known after apply)
+      + client_memory_limit                           = (known after apply)
+      + client_metadata_request_use_connection_ctx    = (known after apply)
+      + client_prefetch_threads                       = (known after apply)
+      + client_result_chunk_size                      = (known after apply)
+      + client_result_column_case_insensitive         = (known after apply)
+      + client_session_keep_alive                     = (known after apply)
+      + client_session_keep_alive_heartbeat_frequency = (known after apply)
+      + client_timestamp_type_mapping                 = (known after apply)
+      + comment                                       = "Demo user for SUPPORT (Horizon/Spark/DuckDB via PAT)"
+      + date_input_format                             = (known after apply)
+      + date_output_format                            = (known after apply)
+      + default_role                                  = "SUPPORT"
+      + default_secondary_roles_option                = "NONE"
+      + default_warehouse                             = "WH_QUERY"
+      + disabled                                      = "default"
+      + enable_unload_physical_type_optimization      = (known after apply)
+      + enable_unredacted_query_syntax_error          = (known after apply)
+      + error_on_nondeterministic_merge               = (known after apply)
+      + error_on_nondeterministic_update              = (known after apply)
+      + fully_qualified_name                          = (known after apply)
+      + geography_output_format                       = (known after apply)
+      + geometry_output_format                        = (known after apply)
+      + id                                            = (known after apply)
+      + jdbc_treat_decimal_as_int                     = (known after apply)
+      + jdbc_treat_timestamp_ntz_as_utc               = (known after apply)
+      + jdbc_use_session_timezone                     = (known after apply)
+      + json_indent                                   = (known after apply)
+      + lock_timeout                                  = (known after apply)
+      + log_event_level                               = (known after apply)
+      + log_level                                     = (known after apply)
+      + mins_to_unlock                                = -1
+      + multi_statement_count                         = (known after apply)
+      + name                                          = "SUPPORT_USER"
+      + network_policy                                = (known after apply)
+      + noorder_sequence_as_default                   = (known after apply)
+      + odbc_treat_decimal_as_int                     = (known after apply)
+      + parameters                                    = (known after apply)
+      + prevent_unload_to_internal_stages             = (known after apply)
+      + query_tag                                     = (known after apply)
+      + quoted_identifiers_ignore_case                = (known after apply)
+      + rows_per_resultset                            = (known after apply)
+      + s3_stage_vpce_dns_name                        = (known after apply)
+      + search_path                                   = (known after apply)
+      + show_output                                   = (known after apply)
+      + simulated_data_sharing_consumer               = (known after apply)
+      + statement_queued_timeout_in_seconds           = (known after apply)
+      + statement_timeout_in_seconds                  = (known after apply)
+      + strict_json_output                            = (known after apply)
+      + time_input_format                             = (known after apply)
+      + time_output_format                            = (known after apply)
+      + timestamp_day_is_always_24h                   = (known after apply)
+      + timestamp_input_format                        = (known after apply)
+      + timestamp_ltz_output_format                   = (known after apply)
+      + timestamp_ntz_output_format                   = (known after apply)
+      + timestamp_output_format                       = (known after apply)
+      + timestamp_type_mapping                        = (known after apply)
+      + timestamp_tz_output_format                    = (known after apply)
+      + timezone                                      = (known after apply)
+      + trace_level                                   = (known after apply)
+      + transaction_abort_on_error                    = (known after apply)
+      + transaction_default_isolation_level           = (known after apply)
+      + two_digit_century_start                       = (known after apply)
+      + unsupported_ddl_action                        = (known after apply)
+      + use_cached_result                             = (known after apply)
+      + user_type                                     = "<changed externally>"
+      + week_of_year_policy                           = (known after apply)
+      + week_start                                    = (known after apply)
+    }
+
+  # snowflake_storage_integration_gcs.landing will be created
+  + resource "snowflake_storage_integration_gcs" "landing" {
+      + comment                   = "Read batch files for Snowpipe auto-ingest"
+      + describe_output           = (known after apply)
+      + enabled                   = true
+      + fully_qualified_name      = (known after apply)
+      + id                        = (known after apply)
+      + name                      = "SI_LANDING"
+      + show_output               = (known after apply)
+      + storage_allowed_locations = [
+          + "gcs://tbd-2026z-stud03-data-landing/",
+        ]
+    }
+
+  # snowflake_table.support_country_map will be created
+  + resource "snowflake_table" "support_country_map" {
+      + change_tracking             = false
+      + comment                     = "Which countries each SUPPORT user may see (row access attribute)"
+      + data_retention_time_in_days = -1
+      + database                    = "LAKEHOUSE"
+      + fully_qualified_name        = (known after apply)
+      + id                          = (known after apply)
+      + name                        = "SUPPORT_COUNTRY_MAP"
+      + owner                       = (known after apply)
+      + schema                      = "GOVERNANCE"
+
+      + column {
+          + name                    = "USER_NAME"
+          + nullable                = true
+          + schema_evolution_record = (known after apply)
+          + type                    = "VARCHAR(256)"
+        }
+      + column {
+          + name                    = "COUNTRY"
+          + nullable                = true
+          + schema_evolution_record = (known after apply)
+          + type                    = "VARCHAR(2)"
+        }
+    }
+
+  # snowflake_tag.pii_type will be created
+  + resource "snowflake_tag" "pii_type" {
+      + comment                = "What kind of personal data a column holds"
+      + database               = "LAKEHOUSE"
+      + fully_qualified_name   = (known after apply)
+      + id                     = (known after apply)
+      + name                   = "PII_TYPE"
+      + ordered_allowed_values = [
+          + "NAME",
+          + "EMAIL",
+          + "PHONE",
+          + "ADDRESS",
+          + "DOB",
+          + "IP",
+          + "CARD",
+        ]
+      + propagate              = "ON_DEPENDENCY_AND_DATA_MOVEMENT"
+      + schema                 = "GOVERNANCE"
+      + show_output            = (known after apply)
+    }
+
+  # snowflake_tag_association.pii["ADDRESS"] will be created
+  + resource "snowflake_tag_association" "pii" {
+      + id                 = (known after apply)
+      + object_identifiers = [
+          + "\"LAKEHOUSE\".\"BRONZE\".\"CUSTOMERS_RAW\".\"POSTAL_CODE\"",
+          + "\"LAKEHOUSE\".\"BRONZE\".\"CUSTOMERS_RAW\".\"STREET\"",
+          + "\"LAKEHOUSE\".\"BRONZE\".\"ORDERS_EVENTS\".\"SHIPPING_POSTAL_CODE\"",
+          + "\"LAKEHOUSE\".\"BRONZE\".\"ORDERS_EVENTS\".\"SHIPPING_STREET\"",
+        ]
+      + object_type        = "ICEBERG TABLE COLUMN"
+      + skip_validation    = true
+      + tag_id             = (known after apply)
+      + tag_value          = "ADDRESS"
+    }
+
+  # snowflake_tag_association.pii["CARD"] will be created
+  + resource "snowflake_tag_association" "pii" {
+      + id                 = (known after apply)
+      + object_identifiers = [
+          + "\"LAKEHOUSE\".\"BRONZE\".\"ORDERS_EVENTS\".\"CARD_LAST4\"",
+        ]
+      + object_type        = "ICEBERG TABLE COLUMN"
+      + skip_validation    = true
+      + tag_id             = (known after apply)
+      + tag_value          = "CARD"
+    }
+
+  # snowflake_tag_association.pii["DOB"] will be created
+  + resource "snowflake_tag_association" "pii" {
+      + id                 = (known after apply)
+      + object_identifiers = [
+          + "\"LAKEHOUSE\".\"BRONZE\".\"CUSTOMERS_RAW\".\"DATE_OF_BIRTH\"",
+        ]
+      + object_type        = "ICEBERG TABLE COLUMN"
+      + skip_validation    = true
+      + tag_id             = (known after apply)
+      + tag_value          = "DOB"
+    }
+
+  # snowflake_tag_association.pii["EMAIL"] will be created
+  + resource "snowflake_tag_association" "pii" {
+      + id                 = (known after apply)
+      + object_identifiers = [
+          + "\"LAKEHOUSE\".\"BRONZE\".\"CUSTOMERS_RAW\".\"EMAIL\"",
+        ]
+      + object_type        = "ICEBERG TABLE COLUMN"
+      + skip_validation    = true
+      + tag_id             = (known after apply)
+      + tag_value          = "EMAIL"
+    }
+
+  # snowflake_tag_association.pii["IP"] will be created
+  + resource "snowflake_tag_association" "pii" {
+      + id                 = (known after apply)
+      + object_identifiers = [
+          + "\"LAKEHOUSE\".\"BRONZE\".\"CLICKSTREAM_EVENTS\".\"IP_ADDRESS\"",
+          + "\"LAKEHOUSE\".\"BRONZE\".\"ORDERS_EVENTS\".\"IP_ADDRESS\"",
+        ]
+      + object_type        = "ICEBERG TABLE COLUMN"
+      + skip_validation    = true
+      + tag_id             = (known after apply)
+      + tag_value          = "IP"
+    }
+
+  # snowflake_tag_association.pii["NAME"] will be created
+  + resource "snowflake_tag_association" "pii" {
+      + id                 = (known after apply)
+      + object_identifiers = [
+          + "\"LAKEHOUSE\".\"BRONZE\".\"CUSTOMERS_RAW\".\"FIRST_NAME\"",
+          + "\"LAKEHOUSE\".\"BRONZE\".\"CUSTOMERS_RAW\".\"LAST_NAME\"",
+        ]
+      + object_type        = "ICEBERG TABLE COLUMN"
+      + skip_validation    = true
+      + tag_id             = (known after apply)
+      + tag_value          = "NAME"
+    }
+
+  # snowflake_tag_association.pii["PHONE"] will be created
+  + resource "snowflake_tag_association" "pii" {
+      + id                 = (known after apply)
+      + object_identifiers = [
+          + "\"LAKEHOUSE\".\"BRONZE\".\"CUSTOMERS_RAW\".\"PHONE\"",
+        ]
+      + object_type        = "ICEBERG TABLE COLUMN"
+      + skip_validation    = true
+      + tag_id             = (known after apply)
+      + tag_value          = "PHONE"
+    }
+
+  # snowflake_user_authentication_policy_attachment.demo["ANALYST_USER"] will be created
+  + resource "snowflake_user_authentication_policy_attachment" "demo" {
+      + authentication_policy_name = (known after apply)
+      + id                         = (known after apply)
+      + user_name                  = "ANALYST_USER"
+    }
+
+  # snowflake_user_authentication_policy_attachment.demo["PII_ADMIN_USER"] will be created
+  + resource "snowflake_user_authentication_policy_attachment" "demo" {
+      + authentication_policy_name = (known after apply)
+      + id                         = (known after apply)
+      + user_name                  = "PII_ADMIN_USER"
+    }
+
+  # snowflake_user_authentication_policy_attachment.demo["SUPPORT_USER"] will be created
+  + resource "snowflake_user_authentication_policy_attachment" "demo" {
+      + authentication_policy_name = (known after apply)
+      + id                         = (known after apply)
+      + user_name                  = "SUPPORT_USER"
+    }
+
+  # snowflake_user_programmatic_access_token.demo["ANALYST_USER"] will be created
+  + resource "snowflake_user_programmatic_access_token" "demo" {
+      + days_to_expiry                   = 30
+      + disabled                         = "default"
+      + expire_rotated_token_after_hours = -1
+      + id                               = (known after apply)
+      + name                             = "ANALYST_USER_PAT"
+      + role_restriction                 = "ANALYST"
+      + rotated_token_name               = (known after apply)
+      + show_output                      = (known after apply)
+      + token                            = (sensitive value)
+      + user                             = "ANALYST_USER"
+    }
+
+  # snowflake_user_programmatic_access_token.demo["PII_ADMIN_USER"] will be created
+  + resource "snowflake_user_programmatic_access_token" "demo" {
+      + days_to_expiry                   = 30
+      + disabled                         = "default"
+      + expire_rotated_token_after_hours = -1
+      + id                               = (known after apply)
+      + name                             = "PII_ADMIN_USER_PAT"
+      + role_restriction                 = "PII_ADMIN"
+      + rotated_token_name               = (known after apply)
+      + show_output                      = (known after apply)
+      + token                            = (sensitive value)
+      + user                             = "PII_ADMIN_USER"
+    }
+
+  # snowflake_user_programmatic_access_token.demo["SUPPORT_USER"] will be created
+  + resource "snowflake_user_programmatic_access_token" "demo" {
+      + days_to_expiry                   = 30
+      + disabled                         = "default"
+      + expire_rotated_token_after_hours = -1
+      + id                               = (known after apply)
+      + name                             = "SUPPORT_USER_PAT"
+      + role_restriction                 = "SUPPORT"
+      + rotated_token_name               = (known after apply)
+      + show_output                      = (known after apply)
+      + token                            = (sensitive value)
+      + user                             = "SUPPORT_USER"
+    }
+
+  # terraform_data.bronze_schema["CLICKSTREAM_EVENTS"] will be created
+  + resource "terraform_data" "bronze_schema" {
+      + id     = (known after apply)
+      + input  = "79971994d8920a53003a28d128ba8d87a2c550e95ec9a051c7b8c118dbd581ff"
+      + output = (known after apply)
+    }
+
+  # terraform_data.bronze_schema["CUSTOMERS_RAW"] will be created
+  + resource "terraform_data" "bronze_schema" {
+      + id     = (known after apply)
+      + input  = "f249e23f1c2e9124c7cede525c511d77d9ff09e9281680dd91bfdf2de50f45c6"
+      + output = (known after apply)
+    }
+
+  # terraform_data.bronze_schema["ORDERS_EVENTS"] will be created
+  + resource "terraform_data" "bronze_schema" {
+      + id     = (known after apply)
+      + input  = "c04174063a0d4763199a2f50d26a28c0ae36a14a7431244211532a23b01aeda9"
+      + output = (known after apply)
+    }
+
+  # terraform_data.bronze_schema["PRODUCTS_RAW"] will be created
+  + resource "terraform_data" "bronze_schema" {
+      + id     = (known after apply)
+      + input  = "cd2522c7fd94ff116c9acc0e999ff40f996f102a3935cbb041e4b20fa6b1ac68"
+      + output = (known after apply)
+    }
+
+  # terraform_data.bronze_schema["RETURNS_RAW"] will be created
+  + resource "terraform_data" "bronze_schema" {
+      + id     = (known after apply)
+      + input  = "03b67ee78515cc88c995494bb954c50b0b95ffb0704cd6d4f39b574ae9f97740"
+      + output = (known after apply)
+    }
+
+  # terraform_data.external_volume_ready will be created
+  + resource "terraform_data" "external_volume_ready" {
+      + id     = (known after apply)
+      + input  = "EV_LAKEHOUSE"
+      + output = (known after apply)
+    }
+
+  # tls_private_key.ingest will be created
+  + resource "tls_private_key" "ingest" {
+      + algorithm                     = "RSA"
+      + ecdsa_curve                   = "P224"
+      + id                            = (known after apply)
+      + private_key_openssh           = (sensitive value)
+      + private_key_pem               = (sensitive value)
+      + private_key_pem_pkcs8         = (sensitive value)
+      + public_key_fingerprint_md5    = (known after apply)
+      + public_key_fingerprint_sha256 = (known after apply)
+      + public_key_openssh            = (known after apply)
+      + public_key_pem                = (known after apply)
+      + rsa_bits                      = 2048
+    }
+
+Plan: 169 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + external_volume_service_account = (known after apply)
+  + ingest_key_file                 = "../.secrets/ingest_svc.p8"
+  + pat_files                       = [
+      + "../.secrets/analyst_user.pat",
+      + "../.secrets/pii_admin_user.pat",
+      + "../.secrets/support_user.pat",
+    ]
+╷
+│ Warning: The SNOWFLAKE_ACCOUNT environment variable is ignored.
+│
+│   with provider["registry.terraform.io/snowflakedb/snowflake"],
+│   on providers.tf line 16, in provider "snowflake":
+│   16: provider "snowflake" {
+│
+│ The SNOWFLAKE_ACCOUNT environment variable sets the `account` field, which requires the "PROVIDER_CONFIGURATION_ACCOUNT_FALLBACK" experiment to be enabled, so its value is currently ignored. The experiment will be enabled by default in
+│ v3, and the variable will be used as a fallback for `organization_name` and `account_name` (which take precedence over it) from that version on. To avoid an unexpected account change in v3, unset SNOWFLAKE_ACCOUNT for the Terraform run,
+│ or enable the "PROVIDER_CONFIGURATION_ACCOUNT_FALLBACK" experiment now to verify the resulting behavior.
+│
+│ (and one more similar warning elsewhere)
+╵
+╷
+│ Warning: Stable feature used on preview feature list.
+│
+│   with provider["registry.terraform.io/snowflakedb/snowflake"],
+│   on providers.tf line 16, in provider "snowflake":
+│   16: provider "snowflake" {
+│
+│ Preview feature snowflake_storage_integration_gcs_resource was already promoted to stable feature. Please remove it from your preview_features_enabled configuration
+│
+│ (and 4 more similar warnings elsewhere)
+╵
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+terraform_data.bronze_schema["CUSTOMERS_RAW"]: Creating...
+terraform_data.bronze_schema["CLICKSTREAM_EVENTS"]: Creating...
+terraform_data.bronze_schema["ORDERS_EVENTS"]: Creating...
+terraform_data.bronze_schema["RETURNS_RAW"]: Creating...
+terraform_data.bronze_schema["PRODUCTS_RAW"]: Creating...
+terraform_data.bronze_schema["CUSTOMERS_RAW"]: Creation complete after 0s [id=6e7897d3-9567-b59a-ea17-7b61df864975]
+terraform_data.bronze_schema["CLICKSTREAM_EVENTS"]: Creation complete after 0s [id=27c93509-210e-3ff0-7dfe-17f276f207f3]
+terraform_data.bronze_schema["ORDERS_EVENTS"]: Creation complete after 0s [id=03dff92e-8cc2-85d3-d7d8-bf5aad0ad563]
+terraform_data.bronze_schema["PRODUCTS_RAW"]: Creation complete after 0s [id=a60f9fd0-d6f7-8d00-cfe7-ed1e5ab37071]
+terraform_data.bronze_schema["RETURNS_RAW"]: Creation complete after 0s [id=081c2f41-46f6-3134-cfb0-955179259039]
+tls_private_key.ingest: Creating...
+tls_private_key.ingest: Creation complete after 0s [id=c691be87d48f762f13cf94a508392023eb634f80]
+local_sensitive_file.ingest_key: Creating...
+local_sensitive_file.ingest_key: Creation complete after 0s [id=b18edcb5b02e200510f9640fc4bb8443828c0d23]
+snowflake_notification_integration.landing: Creating...
+snowflake_grant_account_role.pipeline_to_sysadmin: Creating...
+snowflake_database.lakehouse: Creating...
+snowflake_external_volume.lakehouse: Creating...
+snowflake_execute.budget_email_integration: Creating...
+snowflake_grant_privileges_to_account_role.demo_warehouse["PII_ADMIN"]: Creating...
+snowflake_resource_monitor.lab: Creating...
+snowflake_storage_integration_gcs.landing: Creating...
+snowflake_grant_privileges_to_account_role.demo_warehouse["SUPPORT"]: Creating...
+snowflake_service_user.users["SUPPORT_USER"]: Creating...
+snowflake_execute.budget_email_integration: Creation complete after 1s [id=4e4795cc-b956-0da3-7c1a-6d9e27a04b06]
+snowflake_grant_privileges_to_account_role.demo_warehouse["ANALYST"]: Creating...
+snowflake_notification_integration.landing: Creation complete after 1s [id=NI_LANDING]
+snowflake_grant_privileges_to_account_role.pipeline_account: Creating...
+snowflake_grant_account_role.pipeline_to_sysadmin: Creation complete after 1s [id="PIPELINE_ADMIN"|ROLE|"SYSADMIN"]
+snowflake_resource_monitor.lab: Creation complete after 1s [id=RM_LAB]
+snowflake_service_user.users["PII_ADMIN_USER"]: Creating...
+snowflake_service_user.users["INGEST_SVC"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_warehouse["SUPPORT"]: Creation complete after 1s [id="SUPPORT"|false|false|USAGE|OnAccountObject|WAREHOUSE|"WH_QUERY"]
+snowflake_service_user.users["ANALYST_USER"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_warehouse["PII_ADMIN"]: Creation complete after 1s [id="PII_ADMIN"|false|false|USAGE|OnAccountObject|WAREHOUSE|"WH_QUERY"]
+snowflake_grant_account_role.to_terraform_svc["PII_ADMIN"]: Creating...
+snowflake_external_volume.lakehouse: Creation complete after 1s [id=EV_LAKEHOUSE]
+snowflake_grant_account_role.to_terraform_svc["INGEST"]: Creating...
+snowflake_storage_integration_gcs.landing: Creation complete after 1s [id=SI_LANDING]
+snowflake_grant_privileges_to_account_role.demo_warehouse["ANALYST"]: Creation complete after 0s [id="ANALYST"|false|false|USAGE|OnAccountObject|WAREHOUSE|"WH_QUERY"]
+snowflake_grant_account_role.to_terraform_svc["SUPPORT"]: Creating...
+snowflake_grant_account_role.to_terraform_svc["ANALYST"]: Creating...
+snowflake_service_user.users["SUPPORT_USER"]: Creation complete after 1s [id=SUPPORT_USER]
+snowflake_grant_privileges_to_account_role.pipeline_warehouses["query"]: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_account: Creation complete after 0s [id="PIPELINE_ADMIN"|false|false|EXECUTE TASK,APPLY ROW ACCESS POLICY,APPLY TAG|OnAccount]
+snowflake_execute.account_monitor: Creating...
+snowflake_grant_account_role.to_terraform_svc["INGEST"]: Creation complete after 0s [id="INGEST"|USER|"TERRAFORM_SVC"]
+snowflake_grant_account_role.to_terraform_svc["PII_ADMIN"]: Creation complete after 0s [id="PII_ADMIN"|USER|"TERRAFORM_SVC"]
+snowflake_grant_privileges_to_account_role.external_volume["PIPELINE_ADMIN"]: Creating...
+snowflake_grant_privileges_to_account_role.external_volume["PII_ADMIN"]: Creating...
+snowflake_grant_account_role.to_terraform_svc["SUPPORT"]: Creation complete after 0s [id="SUPPORT"|USER|"TERRAFORM_SVC"]
+snowflake_grant_privileges_to_account_role.external_volume["INGEST"]: Creating...
+snowflake_execute.account_monitor: Creation complete after 0s [id=4b808558-8291-907f-e773-ad90929832fa]
+snowflake_grant_privileges_to_account_role.external_volume["ANALYST"]: Creating...
+snowflake_database.lakehouse: Creation complete after 1s [id=LAKEHOUSE]
+snowflake_grant_privileges_to_account_role.external_volume["SUPPORT"]: Creating...
+snowflake_service_user.users["PII_ADMIN_USER"]: Creation complete after 0s [id=PII_ADMIN_USER]
+snowflake_grant_privileges_to_account_role.pipeline_integrations["si"]: Creating...
+snowflake_service_user.users["INGEST_SVC"]: Creation complete after 0s [id=INGEST_SVC]
+snowflake_grant_privileges_to_account_role.pipeline_integrations["ni"]: Creating...
+snowflake_service_user.users["ANALYST_USER"]: Creation complete after 0s [id=ANALYST_USER]
+google_project_iam_member.ni_monitoring: Creating...
+snowflake_grant_privileges_to_account_role.external_volume["PIPELINE_ADMIN"]: Creation complete after 0s [id="PIPELINE_ADMIN"|false|false|USAGE|OnAccountObject|EXTERNAL VOLUME|"EV_LAKEHOUSE"]
+google_pubsub_subscription_iam_member.ni_subscriber: Creating...
+snowflake_grant_account_role.to_terraform_svc["ANALYST"]: Creation complete after 1s [id="ANALYST"|USER|"TERRAFORM_SVC"]
+google_storage_bucket_iam_member.ev_lakehouse["roles/storage.legacyBucketReader"]: Creating...
+snowflake_grant_privileges_to_account_role.external_volume["PII_ADMIN"]: Creation complete after 1s [id="PII_ADMIN"|false|false|USAGE|OnAccountObject|EXTERNAL VOLUME|"EV_LAKEHOUSE"]
+google_storage_bucket_iam_member.ev_lakehouse["roles/storage.objectUser"]: Creating...
+snowflake_grant_privileges_to_account_role.external_volume["INGEST"]: Creation complete after 1s [id="INGEST"|false|false|USAGE|OnAccountObject|EXTERNAL VOLUME|"EV_LAKEHOUSE"]
+snowflake_grant_privileges_to_account_role.ingest_db: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_integrations["si"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|USAGE|OnAccountObject|INTEGRATION|"SI_LANDING"]
+snowflake_grant_privileges_to_account_role.pipeline_db: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_integrations["ni"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|USAGE|OnAccountObject|INTEGRATION|"NI_LANDING"]
+snowflake_grant_privileges_to_account_role.demo_db["PII_ADMIN"]: Creating...
+snowflake_grant_privileges_to_account_role.external_volume["ANALYST"]: Creation complete after 1s [id="ANALYST"|false|false|USAGE|OnAccountObject|EXTERNAL VOLUME|"EV_LAKEHOUSE"]
+snowflake_grant_privileges_to_account_role.demo_db["SUPPORT"]: Creating...
+snowflake_grant_privileges_to_account_role.external_volume["SUPPORT"]: Creation complete after 1s [id="SUPPORT"|false|false|USAGE|OnAccountObject|EXTERNAL VOLUME|"EV_LAKEHOUSE"]
+snowflake_grant_privileges_to_account_role.demo_db["ANALYST"]: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_warehouses["query"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|OPERATE,USAGE|OnAccountObject|WAREHOUSE|"WH_QUERY"]
+snowflake_schema.schemas["SILVER"]: Creating...
+snowflake_grant_privileges_to_account_role.ingest_db: Creation complete after 0s [id="INGEST"|false|false|USAGE|OnAccountObject|DATABASE|"LAKEHOUSE"]
+snowflake_schema.schemas["BRONZE"]: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_db: Creation complete after 0s [id="PIPELINE_ADMIN"|false|false|USAGE,MONITOR|OnAccountObject|DATABASE|"LAKEHOUSE"]
+snowflake_schema.schemas["GOLD"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_db["SUPPORT"]: Creation complete after 0s [id="SUPPORT"|false|false|USAGE|OnAccountObject|DATABASE|"LAKEHOUSE"]
+snowflake_schema.schemas["GOVERNANCE"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_db["PII_ADMIN"]: Creation complete after 0s [id="PII_ADMIN"|false|false|USAGE|OnAccountObject|DATABASE|"LAKEHOUSE"]
+snowflake_grant_privileges_to_account_role.demo_db["ANALYST"]: Creation complete after 0s [id="ANALYST"|false|false|USAGE|OnAccountObject|DATABASE|"LAKEHOUSE"]
+google_storage_bucket_iam_member.si_landing_bucket_reader: Creating...
+snowflake_schema.schemas["OPS"]: Creating...
+snowflake_schema.schemas["SILVER"]: Creation complete after 0s [id="LAKEHOUSE"."SILVER"]
+google_storage_bucket_iam_member.si_landing_viewer: Creating...
+snowflake_schema.schemas["GOLD"]: Creation complete after 1s [id="LAKEHOUSE"."GOLD"]
+snowflake_grant_account_role.users["PII_ADMIN_USER"]: Creating...
+snowflake_schema.schemas["GOVERNANCE"]: Creation complete after 1s [id="LAKEHOUSE"."GOVERNANCE"]
+snowflake_grant_account_role.users["INGEST_SVC"]: Creating...
+snowflake_schema.schemas["OPS"]: Creation complete after 1s [id="LAKEHOUSE"."OPS"]
+snowflake_grant_account_role.users["SUPPORT_USER"]: Creating...
+snowflake_schema.schemas["BRONZE"]: Creation complete after 1s [id="LAKEHOUSE"."BRONZE"]
+snowflake_grant_account_role.users["ANALYST_USER"]: Creating...
+snowflake_grant_account_role.users["PII_ADMIN_USER"]: Creation complete after 0s [id="PII_ADMIN"|USER|"PII_ADMIN_USER"]
+snowflake_tag.pii_type: Creating...
+snowflake_grant_account_role.users["INGEST_SVC"]: Creation complete after 0s [id="INGEST"|USER|"INGEST_SVC"]
+snowflake_table.support_country_map: Creating...
+snowflake_grant_account_role.users["SUPPORT_USER"]: Creation complete after 0s [id="SUPPORT"|USER|"SUPPORT_USER"]
+snowflake_masking_policy.pii_date: Creating...
+snowflake_grant_account_role.users["ANALYST_USER"]: Creation complete after 0s [id="ANALYST"|USER|"ANALYST_USER"]
+snowflake_authentication_policy.pat_no_netpol: Creating...
+snowflake_masking_policy.pii_date: Creation complete after 0s [id="LAKEHOUSE"."GOVERNANCE"."MP_PII_DATE"]
+snowflake_procedure_sql.stop_all: Creating...
+snowflake_authentication_policy.pat_no_netpol: Creation complete after 0s [id="LAKEHOUSE"."GOVERNANCE"."AP_PAT_NO_NETPOL"]
+snowflake_procedure_sql.start_all: Creating...
+snowflake_table.support_country_map: Creation complete after 0s [id=LAKEHOUSE|GOVERNANCE|SUPPORT_COUNTRY_MAP]
+snowflake_grant_privileges_to_account_role.pipeline_schemas["GOLD"]: Creating...
+snowflake_procedure_sql.start_all: Creation complete after 1s [id="LAKEHOUSE"."OPS"."START_ALL"()]
+snowflake_grant_privileges_to_account_role.demo_schemas["SUPPORT.GOLD"]: Creating...
+snowflake_procedure_sql.stop_all: Creation complete after 1s [id="LAKEHOUSE"."OPS"."STOP_ALL"()]
+snowflake_grant_privileges_to_account_role.pipeline_schemas["SILVER"]: Creating...
+snowflake_tag.pii_type: Creation complete after 1s [id="LAKEHOUSE"."GOVERNANCE"."PII_TYPE"]
+snowflake_grant_privileges_to_account_role.pipeline_schemas["BRONZE"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_schemas["SUPPORT.GOLD"]: Creation complete after 0s [id="SUPPORT"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.pipeline_schemas["OPS"]: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_schemas["GOLD"]: Creation complete after 2s [id="PIPELINE_ADMIN"|false|false|ALL|OnSchema|OnSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.pipeline_schemas["GOVERNANCE"]: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_schemas["SILVER"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|ALL|OnSchema|OnSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_schemas["PII_ADMIN.BRONZE"]: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_schemas["BRONZE"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|ALL|OnSchema|OnSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_schemas["ANALYST.SILVER"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_schemas["PII_ADMIN.BRONZE"]: Creation complete after 0s [id="PII_ADMIN"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_schemas["ANALYST.BRONZE"]: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_schemas["OPS"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|ALL|OnSchema|OnSchema|"LAKEHOUSE"."OPS"]
+snowflake_grant_privileges_to_account_role.demo_schemas["SUPPORT.SILVER"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_schemas["ANALYST.SILVER"]: Creation complete after 0s [id="ANALYST"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_schemas["PII_ADMIN.GOLD"]: Creating...
+google_storage_bucket_iam_member.ev_lakehouse["roles/storage.legacyBucketReader"]: Creation complete after 4s [id=b/tbd-2026z-stud03-data-lakehouse/roles/storage.legacyBucketReader/serviceAccount:sxizeennqn@gcpeuropewest4-1-88d1.iam.gserviceaccount.com]
+snowflake_grant_privileges_to_account_role.demo_schemas["ANALYST.BRONZE"]: Creation complete after 1s [id="ANALYST"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_schemas["ANALYST.GOLD"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_schemas["PII_ADMIN.SILVER"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_schemas["SUPPORT.SILVER"]: Creation complete after 1s [id="SUPPORT"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_schemas["SUPPORT.BRONZE"]: Creating...
+snowflake_grant_privileges_to_account_role.pipeline_schemas["GOVERNANCE"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|ALL|OnSchema|OnSchema|"LAKEHOUSE"."GOVERNANCE"]
+snowflake_grant_privileges_to_account_role.ingest_bronze: Creating...
+snowflake_grant_privileges_to_account_role.demo_schemas["PII_ADMIN.GOLD"]: Creation complete after 1s [id="PII_ADMIN"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_schemas["ANALYST.GOLD"]: Creation complete after 0s [id="ANALYST"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.DYNAMIC TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_schemas["SUPPORT.BRONZE"]: Creation complete after 0s [id="SUPPORT"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.ICEBERG TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.TABLES"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|TABLES|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.ingest_bronze: Creation complete after 0s [id="INGEST"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.ICEBERG TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.DYNAMIC TABLES"]: Creating...
+google_storage_bucket_iam_member.si_landing_bucket_reader: Creation complete after 4s [id=b/tbd-2026z-stud03-data-landing/roles/storage.legacyBucketReader/serviceAccount:sxizeennqn@gcpeuropewest4-1-88d1.iam.gserviceaccount.com]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.VIEWS"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_schemas["PII_ADMIN.SILVER"]: Creation complete after 0s [id="PII_ADMIN"|false|false|USAGE|OnSchema|OnSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.ICEBERG TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.DYNAMIC TABLES"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|DYNAMIC TABLES|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.DYNAMIC TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.ICEBERG TABLES"]: Creation complete after 0s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|ICEBERG TABLES|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.VIEWS"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.ICEBERG TABLES"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|ICEBERG TABLES|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.ICEBERG TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.DYNAMIC TABLES"]: Creation complete after 0s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|DYNAMIC TABLES|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.VIEWS"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.ICEBERG TABLES"]: Creation complete after 1s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|ICEBERG TABLES|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.DYNAMIC TABLES"]: Creation complete after 1s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|DYNAMIC TABLES|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.VIEWS"]: Creation complete after 1s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|VIEWS|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.DYNAMIC TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.VIEWS"]: Creation complete after 1s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|VIEWS|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.ICEBERG TABLES"]: Creation complete after 1s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|ICEBERG TABLES|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.VIEWS"]: Creation complete after 1s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|VIEWS|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.DYNAMIC TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.TABLES"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|TABLES|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.TABLES"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|TABLES|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.DYNAMIC TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.TABLES"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|TABLES|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.VIEWS"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.TABLES"]: Creation complete after 0s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|TABLES|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.ICEBERG TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.DYNAMIC TABLES"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|DYNAMIC TABLES|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.DYNAMIC TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.DYNAMIC TABLES"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|DYNAMIC TABLES|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.TABLES"]: Creation complete after 0s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|TABLES|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.ICEBERG TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.DYNAMIC TABLES"]: Creation complete after 0s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|DYNAMIC TABLES|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.ICEBERG TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.ICEBERG TABLES"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|ICEBERG TABLES|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.DYNAMIC TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.VIEWS"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|VIEWS|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.VIEWS"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.DYNAMIC TABLES"]: Creation complete after 0s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|DYNAMIC TABLES|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.VIEWS"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.TABLES"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|TABLES|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.VIEWS"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.ICEBERG TABLES"]: Creation complete after 1s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|ICEBERG TABLES|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.ICEBERG TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.BRONZE.ICEBERG TABLES"]: Creation complete after 1s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|ICEBERG TABLES|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.GOLD.DYNAMIC TABLES"]: Creation complete after 1s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|DYNAMIC TABLES|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.DYNAMIC TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.VIEWS"]: Creation complete after 1s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|VIEWS|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.VIEWS"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.SILVER.VIEWS"]: Creation complete after 1s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|VIEWS|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.VIEWS"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.VIEWS"]: Creation complete after 1s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|VIEWS|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["SUPPORT.SILVER.ICEBERG TABLES"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnFuture|ICEBERG TABLES|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.ICEBERG TABLES"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.GOLD.TABLES"]: Creation complete after 0s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|TABLES|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_user_authentication_policy_attachment.demo["SUPPORT_USER"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.DYNAMIC TABLES"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|DYNAMIC TABLES|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_user_authentication_policy_attachment.demo["ANALYST_USER"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["ANALYST.BRONZE.VIEWS"]: Creation complete after 0s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnFuture|VIEWS|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_user_authentication_policy_attachment.demo["PII_ADMIN_USER"]: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.SILVER.TABLES"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|TABLES|InSchema|"LAKEHOUSE"."SILVER"]
+snowflake_execute.support_country_rows: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.GOLD.VIEWS"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|VIEWS|InSchema|"LAKEHOUSE"."GOLD"]
+snowflake_row_access_policy.support_country: Creating...
+snowflake_grant_privileges_to_account_role.demo_future_select["PII_ADMIN.BRONZE.ICEBERG TABLES"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnFuture|ICEBERG TABLES|InSchema|"LAKEHOUSE"."BRONZE"]
+snowflake_execute.nightly_stop: Creating...
+snowflake_user_authentication_policy_attachment.demo["SUPPORT_USER"]: Creation complete after 0s [id="SUPPORT_USER"|"LAKEHOUSE"."GOVERNANCE"."AP_PAT_NO_NETPOL"]
+snowflake_execute.budget_grants: Creating...
+snowflake_execute.nightly_stop: Creation complete after 0s [id=71051111-051e-83a4-bb5e-a05447f3c752]
+snowflake_row_access_policy.support_country: Creation complete after 0s [id="LAKEHOUSE"."GOVERNANCE"."RAP_SUPPORT_COUNTRY"]
+snowflake_execute.nightly_stop_resume: Creating...
+snowflake_masking_policy.pii_string: Creating...
+snowflake_user_authentication_policy_attachment.demo["ANALYST_USER"]: Creation complete after 1s [id="ANALYST_USER"|"LAKEHOUSE"."GOVERNANCE"."AP_PAT_NO_NETPOL"]
+snowflake_user_authentication_policy_attachment.demo["PII_ADMIN_USER"]: Creation complete after 1s [id="PII_ADMIN_USER"|"LAKEHOUSE"."GOVERNANCE"."AP_PAT_NO_NETPOL"]
+snowflake_grant_privileges_to_account_role.pipeline_apply_rap: Creating...
+snowflake_user_programmatic_access_token.demo["PII_ADMIN_USER"]: Creating...
+snowflake_execute.support_country_rows: Creation complete after 1s [id=6612d5ad-8d29-7d0c-ac73-74956f884ef2]
+snowflake_user_programmatic_access_token.demo["SUPPORT_USER"]: Creating...
+snowflake_execute.nightly_stop_resume: Creation complete after 1s [id=96110754-39ca-220e-986c-b355b1a1f092]
+snowflake_user_programmatic_access_token.demo["ANALYST_USER"]: Creating...
+snowflake_user_programmatic_access_token.demo["PII_ADMIN_USER"]: Creation complete after 0s [id="PII_ADMIN_USER"|"PII_ADMIN_USER_PAT"]
+snowflake_masking_policy.pii_string: Creation complete after 1s [id="LAKEHOUSE"."GOVERNANCE"."MP_PII_STRING"]
+snowflake_execute.tag_masking["string"]: Creating...
+snowflake_execute.tag_masking["date"]: Creating...
+snowflake_user_programmatic_access_token.demo["SUPPORT_USER"]: Creation complete after 0s [id="SUPPORT_USER"|"SUPPORT_USER_PAT"]
+snowflake_user_programmatic_access_token.demo["ANALYST_USER"]: Creation complete after 0s [id="ANALYST_USER"|"ANALYST_USER_PAT"]
+local_sensitive_file.pat["ANALYST_USER"]: Creating...
+local_sensitive_file.pat["PII_ADMIN_USER"]: Creating...
+local_sensitive_file.pat["PII_ADMIN_USER"]: Creation complete after 0s [id=c257673f7b3b7d637bec5763b5f705b27706b1ee]
+local_sensitive_file.pat["ANALYST_USER"]: Creation complete after 0s [id=c68cf1c547fb53727f72e10e4ec088ccba0f5823]
+local_sensitive_file.pat["SUPPORT_USER"]: Creating...
+local_sensitive_file.pat["SUPPORT_USER"]: Creation complete after 0s [id=9d665f091579db9230b4bf39b095118f3a332b5e]
+snowflake_grant_privileges_to_account_role.pipeline_apply_rap: Creation complete after 0s [id="PIPELINE_ADMIN"|false|false|APPLY|OnSchemaObject|OnObject|ROW ACCESS POLICY|"LAKEHOUSE"."GOVERNANCE"."RAP_SUPPORT_COUNTRY"]
+google_pubsub_subscription_iam_member.ni_subscriber: Creation complete after 8s [id=projects/tbd-2026z-stud03-data/subscriptions/landing-notifications-snowpipe/roles/pubsub.subscriber/serviceAccount:pvgizhljvm@gcpeuropewest4-1-88d1.iam.gserviceaccount.com]
+snowflake_execute.tag_masking["string"]: Creation complete after 0s [id=57c0c8e0-cd66-64f1-a2b2-9238db919423]
+snowflake_execute.tag_masking["date"]: Creation complete after 0s [id=7c4bf492-43da-1257-3897-f1537363edb9]
+snowflake_execute.budget_grants: Creation complete after 1s [id=14e0d7ca-6164-c4b9-06c8-43eea78c5395]
+snowflake_execute.budget: Creating...
+google_storage_bucket_iam_member.ev_lakehouse["roles/storage.objectUser"]: Creation complete after 7s [id=b/tbd-2026z-stud03-data-lakehouse/roles/storage.objectUser/serviceAccount:sxizeennqn@gcpeuropewest4-1-88d1.iam.gserviceaccount.com]
+terraform_data.external_volume_ready: Creating...
+terraform_data.external_volume_ready: Provisioning with 'local-exec'...
+terraform_data.external_volume_ready (local-exec): Executing: ["bash" "-c" "for i in $(seq 1 30); do\n  out=$(snow sql -q \"SELECT SYSTEM\\$VERIFY_EXTERNAL_VOLUME('EV_LAKEHOUSE')\" --format json 2>&1) || true\n  echo \"$out\" | grep -q 'success[^,]*true' && { echo \"external volume EV_LAKEHOUSE ready\"; exit 0; }\n  sleep 10\ndone\necho \"$out\"; echo \"external volume EV_LAKEHOUSE still not usable after 5 minutes\" >&2; exit 1\n"]
+google_storage_bucket_iam_member.si_landing_viewer: Creation complete after 8s [id=b/tbd-2026z-stud03-data-landing/roles/storage.objectViewer/serviceAccount:sxizeennqn@gcpeuropewest4-1-88d1.iam.gserviceaccount.com]
+google_project_iam_member.ni_monitoring: Creation complete after 10s [id=tbd-2026z-stud03-data/roles/monitoring.viewer/serviceAccount:pvgizhljvm@gcpeuropewest4-1-88d1.iam.gserviceaccount.com]
+terraform_data.external_volume_ready (local-exec): external volume EV_LAKEHOUSE ready
+terraform_data.external_volume_ready: Creation complete after 6s [id=f50239ab-53fe-c135-a5fc-e5eb4db66833]
+snowflake_iceberg_table.bronze["PRODUCTS_RAW"]: Creating...
+snowflake_iceberg_table.bronze["RETURNS_RAW"]: Creating...
+snowflake_iceberg_table.bronze["CLICKSTREAM_EVENTS"]: Creating...
+snowflake_iceberg_table.bronze["CUSTOMERS_RAW"]: Creating...
+snowflake_iceberg_table.bronze["ORDERS_EVENTS"]: Creating...
+snowflake_iceberg_table.bronze["PRODUCTS_RAW"]: Creation complete after 1s [id="LAKEHOUSE"."BRONZE"."PRODUCTS_RAW"]
+snowflake_iceberg_table.bronze["ORDERS_EVENTS"]: Creation complete after 1s [id="LAKEHOUSE"."BRONZE"."ORDERS_EVENTS"]
+snowflake_iceberg_table.bronze["RETURNS_RAW"]: Creation complete after 1s [id="LAKEHOUSE"."BRONZE"."RETURNS_RAW"]
+snowflake_iceberg_table.bronze["CUSTOMERS_RAW"]: Creation complete after 1s [id="LAKEHOUSE"."BRONZE"."CUSTOMERS_RAW"]
+snowflake_iceberg_table.bronze["CLICKSTREAM_EVENTS"]: Creation complete after 1s [id="LAKEHOUSE"."BRONZE"."CLICKSTREAM_EVENTS"]
+snowflake_tag_association.pii["CARD"]: Creating...
+snowflake_tag_association.pii["ADDRESS"]: Creating...
+snowflake_tag_association.pii["IP"]: Creating...
+snowflake_tag_association.pii["NAME"]: Creating...
+snowflake_tag_association.pii["PHONE"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_ingest["ORDERS_EVENTS"]: Creating...
+snowflake_tag_association.pii["DOB"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.RETURNS_RAW"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_pipeline["RETURNS_RAW"]: Creating...
+snowflake_tag_association.pii["CARD"]: Creation complete after 1s [id="LAKEHOUSE"."GOVERNANCE"."PII_TYPE"|CARD|ICEBERG TABLE COLUMN]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.CUSTOMERS_RAW"]: Creating...
+snowflake_tag_association.pii["DOB"]: Creation complete after 1s [id="LAKEHOUSE"."GOVERNANCE"."PII_TYPE"|DOB|ICEBERG TABLE COLUMN]
+snowflake_tag_association.pii["EMAIL"]: Creating...
+snowflake_tag_association.pii["PHONE"]: Creation complete after 1s [id="LAKEHOUSE"."GOVERNANCE"."PII_TYPE"|PHONE|ICEBERG TABLE COLUMN]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.CUSTOMERS_RAW"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_ingest["ORDERS_EVENTS"]: Creation complete after 1s [id="INGEST"|false|false|INSERT,SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."ORDERS_EVENTS"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.CLICKSTREAM_EVENTS"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_pipeline["RETURNS_RAW"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|INSERT,SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."RETURNS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.RETURNS_RAW"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.RETURNS_RAW"]: Creation complete after 1s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."RETURNS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_pipeline["PRODUCTS_RAW"]: Creating...
+snowflake_tag_association.pii["IP"]: Creation complete after 1s [id="LAKEHOUSE"."GOVERNANCE"."PII_TYPE"|IP|ICEBERG TABLE COLUMN]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.RETURNS_RAW"]: Creating...
+snowflake_tag_association.pii["EMAIL"]: Creation complete after 0s [id="LAKEHOUSE"."GOVERNANCE"."PII_TYPE"|EMAIL|ICEBERG TABLE COLUMN]
+snowflake_grant_privileges_to_account_role.bronze_pipeline["CLICKSTREAM_EVENTS"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.CUSTOMERS_RAW"]: Creation complete after 0s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."CUSTOMERS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.PRODUCTS_RAW"]: Creating...
+snowflake_tag_association.pii["NAME"]: Creation complete after 1s [id="LAKEHOUSE"."GOVERNANCE"."PII_TYPE"|NAME|ICEBERG TABLE COLUMN]
+snowflake_grant_privileges_to_account_role.bronze_pipeline["CUSTOMERS_RAW"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.CUSTOMERS_RAW"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."CUSTOMERS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.PRODUCTS_RAW"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.CLICKSTREAM_EVENTS"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."CLICKSTREAM_EVENTS"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.CLICKSTREAM_EVENTS"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.RETURNS_RAW"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."RETURNS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_ingest["CLICKSTREAM_EVENTS"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_pipeline["PRODUCTS_RAW"]: Creation complete after 0s [id="PIPELINE_ADMIN"|false|false|INSERT,SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."PRODUCTS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_pipeline["ORDERS_EVENTS"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.RETURNS_RAW"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."RETURNS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.ORDERS_EVENTS"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_pipeline["CLICKSTREAM_EVENTS"]: Creation complete after 0s [id="PIPELINE_ADMIN"|false|false|INSERT,SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."CLICKSTREAM_EVENTS"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.CUSTOMERS_RAW"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.PRODUCTS_RAW"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."PRODUCTS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.ORDERS_EVENTS"]: Creating...
+snowflake_tag_association.pii["ADDRESS"]: Creation complete after 1s [id="LAKEHOUSE"."GOVERNANCE"."PII_TYPE"|ADDRESS|ICEBERG TABLE COLUMN]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.CLICKSTREAM_EVENTS"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.PRODUCTS_RAW"]: Creation complete after 1s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."PRODUCTS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.ORDERS_EVENTS"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_pipeline["CUSTOMERS_RAW"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|INSERT,SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."CUSTOMERS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.PRODUCTS_RAW"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_ingest["CLICKSTREAM_EVENTS"]: Creation complete after 1s [id="INGEST"|false|false|INSERT,SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."CLICKSTREAM_EVENTS"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.CLICKSTREAM_EVENTS"]: Creation complete after 1s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."CLICKSTREAM_EVENTS"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.CUSTOMERS_RAW"]: Creation complete after 1s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."CUSTOMERS_RAW"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.ORDERS_EVENTS"]: Creation complete after 1s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."ORDERS_EVENTS"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["ANALYST.ORDERS_EVENTS"]: Creation complete after 1s [id="ANALYST"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."ORDERS_EVENTS"]
+snowflake_grant_privileges_to_account_role.bronze_pipeline["ORDERS_EVENTS"]: Creation complete after 1s [id="PIPELINE_ADMIN"|false|false|INSERT,SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."ORDERS_EVENTS"]
+snowflake_execute.dynamic_table["SILVER.ORDERS_LATEST"]: Creating...
+snowflake_execute.dynamic_table["SILVER.CLICKSTREAM"]: Creating...
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.ORDERS_EVENTS"]: Creation complete after 0s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."ORDERS_EVENTS"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["PII_ADMIN.CLICKSTREAM_EVENTS"]: Creation complete after 1s [id="PII_ADMIN"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."CLICKSTREAM_EVENTS"]
+snowflake_grant_privileges_to_account_role.bronze_demo_select["SUPPORT.PRODUCTS_RAW"]: Creation complete after 0s [id="SUPPORT"|false|false|SELECT|OnSchemaObject|OnObject|ICEBERG TABLE|"LAKEHOUSE"."BRONZE"."PRODUCTS_RAW"]
+snowflake_execute.budget: Creation complete after 10s [id=e23efbba-e60c-6b25-3c76-3eafe5b1c4ac]
+snowflake_execute.dynamic_table["SILVER.CLICKSTREAM"]: Creation complete after 2s [id=48429e68-59d7-a6f9-80f8-35fa1b4fbfa2]
+snowflake_execute.dynamic_table["SILVER.ORDERS_LATEST"]: Creation complete after 2s [id=2a0b37c1-1885-8877-6dc6-42837f788d4a]
+snowflake_execute.dynamic_table_gold: Creating...
+snowflake_execute.dynamic_table_gold: Creation complete after 2s [id=426bf2ca-5686-ece0-7767-aaf9ab99bbde]
+╷
+│ Warning: The SNOWFLAKE_ACCOUNT environment variable is ignored.
+│
+│   with provider["registry.terraform.io/snowflakedb/snowflake"],
+│   on providers.tf line 16, in provider "snowflake":
+│   16: provider "snowflake" {
+│
+│ The SNOWFLAKE_ACCOUNT environment variable sets the `account` field, which requires the "PROVIDER_CONFIGURATION_ACCOUNT_FALLBACK" experiment to be enabled, so its value is currently ignored. The experiment will be enabled by default in
+│ v3, and the variable will be used as a fallback for `organization_name` and `account_name` (which take precedence over it) from that version on. To avoid an unexpected account change in v3, unset SNOWFLAKE_ACCOUNT for the Terraform run,
+│ or enable the "PROVIDER_CONFIGURATION_ACCOUNT_FALLBACK" experiment now to verify the resulting behavior.
+│
+│ (and one more similar warning elsewhere)
+╵
+╷
+│ Warning: Stable feature used on preview feature list.
+│
+│   with provider["registry.terraform.io/snowflakedb/snowflake"],
+│   on providers.tf line 16, in provider "snowflake":
+│   16: provider "snowflake" {
+│
+│ Preview feature snowflake_storage_integration_gcs_resource was already promoted to stable feature. Please remove it from your preview_features_enabled configuration
+│
+│ (and 4 more similar warnings elsewhere)
+╵
+
+Apply complete! Resources: 169 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+external_volume_service_account = "sxizeennqn@gcpeuropewest4-1-88d1.iam.gserviceaccount.com"
+ingest_key_file = "../.secrets/ingest_svc.p8"
+pat_files = [
+  "../.secrets/analyst_user.pat",
+  "../.secrets/pii_admin_user.pat",
+  "../.secrets/support_user.pat",
+]
+Finished in 59.96s
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com took 1m0s9ms ✔ ❯
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com ✔ ❯
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com ✔ ❯ mise run dbt:deploy
+[config] $ uv run -q python -m tbd_lakehouse.config
+management project: tbd-2026z-stud03-mgmt
+data project:       tbd-2026z-stud03-data
+state bucket:       tbd-2026z-stud03-mgmt-tfstate
+snowflake account:  AWLVJAV-BF09434
+[dbt:deploy] $ # Upload a clean copy: local dbt output (target/, logs/) breaks the stage upload.
+Creating temporary stage
+Copying project files to stage
+  Copied 16 files
+Creating DBT project
++-------------------------------------+
+| status                              |
+|-------------------------------------|
+| LAKEHOUSE_DBT successfully created. |
++-------------------------------------+
+
+Finished in 31.88s
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com took 31s929ms ✔ ❯ mise run dcm
+[config] $ uv run -q python -m tbd_lakehouse.config
+management project: tbd-2026z-stud03-mgmt
+data project:       tbd-2026z-stud03-data
+state bucket:       tbd-2026z-stud03-mgmt-tfstate
+snowflake account:  AWLVJAV-BF09434
+[dcm] $ LANDING="tbd-${TF_VAR_semester}-stud${TF_VAR_team_id}-data-landing"
+
+⚠️  Cannot validate target's account identifier: account_identifier is not specified in the manifest target. The current session account is required to match the manifest target's account_identifier.
+Creating DCM Project 'LAKEHOUSE.OPS.LAKEHOUSE_DCM'
+DCM Project 'LAKEHOUSE.OPS.LAKEHOUSE_DCM' successfully created.
+⚠️  Cannot validate target's account identifier: account_identifier is not specified in the manifest target. The current session account is required to match the manifest target's account_identifier.
+
+UPLOAD    ✓  3s
+  • Create temporary stage inside LAKEHOUSE.OPS
+  • Upload files
+    ├─ manifest.yml
+    └─ sources
+       └─ definitions (3 files)
+RENDER    ✓  5s
+COMPILE   ✓  0s
+PLAN      ✓  4s
+DEPLOY    ✓  23s
+
+CREATE   FILE_FORMAT          LAKEHOUSE.BRONZE.NDJSON
+CREATE   PIPE                 LAKEHOUSE.BRONZE.PIPE_CLICKS_STREAM
+CREATE   PIPE                 LAKEHOUSE.BRONZE.PIPE_CUSTOMERS
+CREATE   PIPE                 LAKEHOUSE.BRONZE.PIPE_ORDERS_STREAM
+CREATE   PIPE                 LAKEHOUSE.BRONZE.PIPE_PRODUCTS
+CREATE   PIPE                 LAKEHOUSE.BRONZE.PIPE_RETURNS
+CREATE   STAGE                LAKEHOUSE.BRONZE.LANDING_STAGE
+CREATE   TASK                 LAKEHOUSE.OPS.RUN_DBT
+ALTER    ROLE                 INGEST
+└─ grants
+   ├─ added ON PIPE LAKEHOUSE.BRONZE.PIPE_CLICKS_STREAM
+   │  └─ privileges
+   │     ├─ added MONITOR
+   │     │  └─ set WITH_GRANT_OPTION: false
+   │     └─ added OPERATE
+   │        └─ set WITH_GRANT_OPTION: false
+   └─ added ON PIPE LAKEHOUSE.BRONZE.PIPE_ORDERS_STREAM
+      └─ privileges
+         ├─ added MONITOR
+         │  └─ set WITH_GRANT_OPTION: false
+         └─ added OPERATE
+            └─ set WITH_GRANT_OPTION: false
+
+ALTER    ROLE                 PIPELINE_ADMIN
+└─ grants
+   ├─ added ON FILE_FORMAT LAKEHOUSE.BRONZE.NDJSON
+   │  └─ privileges
+   │     └─ added OWNERSHIP
+   ├─ added ON PIPE LAKEHOUSE.BRONZE.PIPE_CLICKS_STREAM
+   │  └─ privileges
+   │     └─ added OWNERSHIP
+   ├─ added ON PIPE LAKEHOUSE.BRONZE.PIPE_CUSTOMERS
+   │  └─ privileges
+   │     └─ added OWNERSHIP
+   ├─ added ON PIPE LAKEHOUSE.BRONZE.PIPE_ORDERS_STREAM
+   │  └─ privileges
+   │     └─ added OWNERSHIP
+   ├─ added ON PIPE LAKEHOUSE.BRONZE.PIPE_PRODUCTS
+   │  └─ privileges
+   │     └─ added OWNERSHIP
+   ├─ added ON PIPE LAKEHOUSE.BRONZE.PIPE_RETURNS
+   │  └─ privileges
+   │     └─ added OWNERSHIP
+   ├─ added ON STAGE LAKEHOUSE.BRONZE.LANDING_STAGE
+   │  └─ privileges
+   │     └─ added OWNERSHIP
+   └─ added ON TASK LAKEHOUSE.OPS.RUN_DBT
+      └─ privileges
+         └─ added OWNERSHIP
+
+Deployed 10 entities (8 created, 2 altered, 0 dropped).
+DCM deployed.
+Finished in 66.26s
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com took 1m6s309ms ✔ ❯
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com ✔ ❯
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com ✔ ❯
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com ✔ ❯ mise run test
+[config] $ uv run -q python -m tbd_lakehouse.config
+management project: tbd-2026z-stud03-mgmt
+data project:       tbd-2026z-stud03-data
+state bucket:       tbd-2026z-stud03-mgmt-tfstate
+snowflake account:  AWLVJAV-BF09434
+[test] $ mkdir -p .state && rm -f .state/test-results-*.json
+== host checks (Terraform, GCP, Snowflake, pipelines) ==
+...............................                                                                              [100%]
+31 passed in 409.22s (0:06:49)
+== lab checks (Spark + DuckDB via Horizon) ==
+...........                                                              [100%]
+11 passed in 105.55s (0:01:45)
+
+Exercise checks
+==============================================================================
+1 Infra              PASS     4 test(s)
+2 Batch path         PASS     5 test(s)
+3 Streaming path     PASS     4 test(s)
+4 Parity             PASS     3 test(s)
+5 Masking            PASS     14 test(s)
+6 Tag propagation    PASS     5 test(s)
+7 Guardrails         PASS     7 test(s)
+==============================================================================
+Finished in 517.05s
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com took 8m37s111ms ✔ ❯

@@ -1,0 +1,3 @@
+rytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com took 11ms ✔ ❯ mise run gen:stream
+[gen:stream] $ uv run -q python -m tbd_lakehouse.generators.stream
+publishing to projects/tbd-2026z-stud03-data/topics/{orders,clickstream}-events at 2.0/s (Ctrl-C to stop)

@@ -1,0 +1,33 @@
+rytsonik in ~ on 󱇶 piolad2003@gmail.com took 11ms ✔ ❯ cd /repos/tbd-lakehouse-stud/
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com took 7ms ✔ ❯ mise run lab
+[lab] $ TOKEN_FILE=../.secrets/lab_token
+[+] Building 122.7s (12/12) FINISHED
+ => [internal] load local bake definitions                                                  0.0s
+ => => reading from stdin 500B                                                              0.0s
+ => [internal] load build definition from Dockerfile                                        0.0s
+ => => transferring dockerfile: 1.44kB                                                      0.0s
+ => [internal] load metadata for docker.io/library/python:3.12-slim-bookworm                0.0s
+ => [internal] load .dockerignore                                                           0.0s
+ => => transferring context: 2B                                                             0.0s
+ => [1/6] FROM docker.io/library/python:3.12-slim-bookworm@sha256:34386ef0cb081344d7ec1c10  0.2s
+ => => resolve docker.io/library/python:3.12-slim-bookworm@sha256:34386ef0cb081344d7ec1c10  0.0s
+ => [2/6] RUN apt-get update && apt-get install -y --no-install-recommends openjdk-17-jre  11.5s
+ => [3/6] RUN mkdir -p /opt/jars && cd /opt/jars     && curl -sSfLO https://repo1.maven.or  3.5s
+ => [4/6] RUN pip install --no-cache-dir setuptools "pyspark==3.5.9" "duckdb>=2.0" "marim  57.9s
+ => [5/6] RUN python -c "import duckdb; c=duckdb.connect(); c.install_extension('httpfs');  1.8s
+ => [6/6] WORKDIR /workspace                                                                0.1s
+ => exporting to image                                                                     47.2s
+ => => exporting layers                                                                    33.4s
+ => => exporting manifest sha256:9eaf060042e47a67e271e65111997e6ef96db33ee27d06e1218580164  0.0s
+ => => exporting config sha256:b6230a5e0ac6ecc132746ba47070469df11cf4cdad5d7658426f92dcc36  0.0s
+ => => exporting attestation manifest sha256:eed5095c4cd6b888757372ac08bfd67834ff365b3aa0f  0.0s
+ => => exporting manifest list sha256:046f8ae917ca626a1953d342d01fb1e28872407ed5cccf4967e3  0.0s
+ => => naming to docker.io/library/tbd-lakehouse-lab:latest                                 0.0s
+ => => unpacking to docker.io/library/tbd-lakehouse-lab:latest                             13.6s
+ => resolving provenance for metadata file                                                  0.0s
+[+] up 3/3
+ ✔ Image tbd-lakehouse-lab Built                                                           122.8s
+ ✔ Network lab_default     Created                                                           0.0s
+ ✔ Container lab-lab-1     Started                                                           0.7s
+marimo lab: http://localhost:2718/?access_token=592fae7e482ae87a5f2123a92cf0381a  (notebooks: 01_parity, 02_masking)
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.1frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 vifrytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 viafrytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 vfrytsonik in /repos/tbfrytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com took 2m3s907ms ✔ ❯

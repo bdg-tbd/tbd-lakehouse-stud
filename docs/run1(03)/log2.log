@@ -1,0 +1,28 @@
+frytsonik in /repos/tbd-lakehouse-stud on  master +6 [!] is 󰏗 v0.1.0 via  v3.14.7 on 󱇶 piolad2003@gmail.com took 12ms ✔ ❯ mise run gen:batch
+[gen:batch] $ uv run -q python -m tbd_lakehouse.generators.batch
+gs://tbd-2026z-stud03-data-landing/customers/customers-20261107T124910-0.json
+gs://tbd-2026z-stud03-data-landing/products/products-20261107T124910-0.json
+next drop in 256s (Ctrl-C to stop)
+gs://tbd-2026z-stud03-data-landing/customers/customers-20261107T125328-1.json
+gs://tbd-2026z-stud03-data-landing/products/products-20261107T125328-1.json
+next drop in 212s (Ctrl-C to stop)
+gs://tbd-2026z-stud03-data-landing/customers/customers-20261107T125701-2.json
+gs://tbd-2026z-stud03-data-landing/products/products-20261107T125701-2.json
+gs://tbd-2026z-stud03-data-landing/returns/returns-20261107T125701-2.json
+next drop in 266s (Ctrl-C to stop)
+gs://tbd-2026z-stud03-data-landing/customers/customers-20261107T130127-3.json
+gs://tbd-2026z-stud03-data-landing/products/products-20261107T130127-3.json
+gs://tbd-2026z-stud03-data-landing/returns/returns-20261107T130127-3.json
+next drop in 290s (Ctrl-C to stop)
+gs://tbd-2026z-stud03-data-landing/customers/customers-20261107T130618-4.json
+gs://tbd-2026z-stud03-data-landing/products/products-20261107T130618-4.json
+gs://tbd-2026z-stud03-data-landing/returns/returns-20261107T130618-4.json
+next drop in 290s (Ctrl-C to stop)
+gs://tbd-2026z-stud03-data-landing/customers/customers-20261107T131108-5.json
+gs://tbd-2026z-stud03-data-landing/products/products-20261107T131108-5.json
+gs://tbd-2026z-stud03-data-landing/returns/returns-20261107T131108-5.json
+next drop in 276s (Ctrl-C to stop)
+gs://tbd-2026z-stud03-data-landing/customers/customers-20261107T131545-6.json
+gs://tbd-2026z-stud03-data-landing/products/products-20261107T131545-6.json
+gs://tbd-2026z-stud03-data-landing/returns/returns-20261107T131545-6.json
+next drop in 266s (Ctrl-C to stop)
