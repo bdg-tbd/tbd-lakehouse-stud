@@ -268,7 +268,14 @@ maps `SUPPORT_USER` to PL and NL only.*
 
 *`ANALYST_USER`: every PII column is `***` and the date of birth is empty, but all countries are visible.*
 
-`[SCREENSHOT: the same notebook with the table dropdown set to SILVER.ORDERS_LATEST, for ANALYST_USER (or SUPPORT_USER), so the streaming ip_address column is shown too. Run the cells below the dropdown again after changing it.]`
+The same notebook for the streaming path, `SILVER.ORDERS_LATEST` (the 20 oldest orders):
+
+<img src="img/masking_support_orders_latest.png" alt="02_masking: SUPPORT_USER sees ip_address reduced to two octets in Snowflake and Spark; DuckDB is refused" width="760">
+
+*`SUPPORT_USER` on `SILVER.ORDERS_LATEST`: `ip_address` is cut to the first two octets (`161.217.x.x`), `shipping_street` is
+`***`, and `card_last4` stays visible (`NaN` = the order was not paid by card). Snowflake and Spark return the same
+values, which also shows the tag reached this dynamic table by propagation. DuckDB is refused:
+`Unable to plan scan for table ORDERS_LATEST, but table's config disabled non-server-side scan planning`.*
 
 ## 5. Comparing the paths
 
@@ -297,6 +304,5 @@ warehouse time (dbt, dynamic tables, our own queries and the test suite), not in
 |---|---|
 | Names, PDF file name (`03` or `03b`) | ask the teacher; names in the header |
 | Confirm the `CUSTOMER_LTV` / return interpretation (section 0) | teacher / task text |
-| Masking screenshot for `ip_address` (section 4, last marker) | marimo `02_masking`, table dropdown = `SILVER.ORDERS_LATEST` |
 | Cost per service (section 5) | `mise run cost` after 3+ hours |
 | Page count 2–4 | delete this section and the draft box, shorten section 0 and the tables |
